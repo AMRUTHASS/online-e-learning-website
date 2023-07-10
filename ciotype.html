@@ -1,0 +1,231 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+                 :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 380px;height: auto;font-size: 35px;color: brown;">C-input and output type</h1>   
+            </div>
+          </div>  
+        <p><b>When we say Input, it means to feed some data into a program. An input can be given in the form of a file or from the command line. C programming provides a set <br>
+             of built-in functions to read the given input and feed it to the program as per requirement.When we say Output, it means to display some data on screen, printer, <br>
+              or in any file. C programming provides a set of built-in functions to output the data on the computer screen as well as to save it in text or binary files.
+
+            </b></p>
+            <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">The Standard Files</h2>
+            <p><b>C programming treats all the devices as files. So devices such as the display are addressed in the same way as files and the following three files are <br>
+                 automatically opened when a program executes to provide access to the keyboard and screen.
+             </b></p>
+             <ul>
+                <li>Standard input - stdin - Keyboard</li>
+                <li>Standard output - stdout - Screen</li>
+                <li>Standard error - stderr - Your screen</li>
+             </ul>
+             <p><b>The file pointers are the means to access the file for reading and writing purpose. This section explains how to read values from the screen and how <br>
+                 to print the result on the screen.</b></p>
+        
+            <h2 style="background-color:  bisque;width: 400px;height: auto;color: brown;">The getchar() and putchar() Functions</h2>
+            <p><b>The int getchar(void) function reads the next available character from the screen and returns it as an integer. This function reads only single character at a time. <br>
+                 You can use this method in the loop in case you want to read more than one character from the screen.The int putchar(int c) function puts the passed character on the <br>
+                  screen and returns the same character. This function puts only single character at a time. You can use this method in the loop in case you want to display more <br>
+                   than one character on the screen. Check the following example   </b></p>
+                   <p>#include <stdio.h> <br>
+                    int main( ) { <br>
+                    
+                       int c; <br>
+                    
+                       printf( "Enter a value :"); <br>
+                       c = getchar( ); <br>
+                    
+                       printf( "\nYou entered: "); <br>
+                       putchar( c ); <br>
+                    
+                       return 0; <br>
+                    }</p> 
+                    <p><b>When the above code is compiled and executed, it waits for you to input some text. When you enter a text and press enter, then the program proceeds and reads <br>
+                         only a single character and displays it as follows</b></p>
+                         <p>$./a.out <br>
+                            Enter a value : this is test <br>
+                            You entered: t</p>
+
+        
+            <h2 style="background-color:  bisque;width: 330px;height: auto;color: brown;">The gets() and puts() Functions</h2>
+            <p><b>The char *gets(char *s) function reads a line from stdin into the buffer pointed to by s until either a terminating newline or EOF (End of File).The int puts(const char *s) <br>
+                 function writes the string 's' and 'a' trailing newline to stdout. <br>
+                 NOTE: Though it has been deprecated to use gets() function, Instead of using gets, you want to use fgets()
+            </b></p>
+            <p>#include <stdio.h>  <br>
+                int main( ) { <br>
+                
+                   char str[100]; <br>
+                
+                   printf( "Enter a value :"); <br>
+                   gets( str ); <br>
+                
+                   printf( "\nYou entered: "); <br>
+                   puts( str ); <br>
+                
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it waits for you to input some text. When you enter a text and press enter, then the program proceeds and reads the complete <br>
+                    line till end, and displays it as follows </b></p>
+                    <p>$./a.out <br>
+                        Enter a value : this is test <br>
+                        You entered: this is test</p>
+          <h2 style="background-color:  bisque;width: 350px;height: auto;color: brown;">The scanf() and printf() Functions</h2>
+         <p><b>The int scanf(const char *format, ...) function reads the input from the standard input stream stdin and scans that input according to the format provided.The int printf(const char *format, ...) <br>
+             function writes the output to the standard output stream stdout and produces the output according to the format provided.The format can be a simple constant string, but you can specify %s, %d, <br>
+              %c, %f, etc., to print or read strings, integer, character or float respectively. There are many other formatting options available which can be used based on requirements. Let us now <br>
+               proceed with a simple example to understand the concepts better</b></p>
+               <p>#include <stdio.h> <br>
+                int main( ) { <br>
+                
+                   char str[100]; <br>
+                   int i; <br>
+                   printf( "Enter a value :"); <br>
+                   scanf("%s %d", str, &i); <br>
+                
+                   printf( "\nYou entered: %s %d ", str, i); <br>
+                
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it waits for you to input some text. When you enter a text and press enter, then program proceeds and reads the input and <br>
+                     displays it as follows </b></p>
+                     <p>$./a.out <br>
+                        Enter a value : seven 7 <br>
+                        You entered: seven 7</p>
+                        <p><b>Here, it should be noted that scanf() expects input in the same format as you provided %s and %d, which means you have to provide valid inputs like "string integer". If you <br>
+                            provide "string string" or "integer integer", then it will be assumed as wrong input. Secondly, while reading a string, scanf() stops reading as soon as it encounters a space, <br>
+                             so "this is test" are three strings for scanf().</b></p>
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        
+    
+</body>
+</html>

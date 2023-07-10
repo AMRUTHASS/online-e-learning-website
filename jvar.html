@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Variable Types</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+        
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 350px;height: auto;font-size: 35px;color: brown;">Java-Variables Types</h1>   
+            </div>
+          </div>  
+          <p>A variable provides us with named storage that our programs can manipulate. Each variable in Java has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.
+            <br>
+            You must declare all variables before they can be used. Following is the basic form of a variable declaration −</p> 
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                data type variable [ = value][, variable [ = value] ...] ;</p>
+          <p>Here data type is one of Java's datatypes and variable is the name of the variable. To declare more than one variable of the specified type, you can use a comma-separated list.
+            <br>
+            Following are valid examples of variable declaration and initialization in Java −</p>
+          <p><b>Example</b></p>
+          <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            int a, b, c;         // Declares three ints, a, b, and c.<br>
+            int a = 10, b = 10;  // Example of initialization.<br>
+            byte B = 22;         // initializes a byte type variable B.<br>
+            double pi = 3.14159; // declares and assigns a value of PI.<br>
+            char a = 'a';        // the char variable a iis initialized with value 'a'
+          </p>
+          <p>This chapter will explain various variable types available in Java Language. There are three kinds of variables in Java −</p>
+          <ul>
+            <li>Local variables</li><br>
+            <li>Instance variables</li><br>
+            <li>Class/Static variables</li><br>
+        </ul></p>
+            <h2 style="background-color:  bisque;width: 175px;height: auto;color: brown;">Local Variables</h2>
+            <ul>
+                <li>Local variables are declared in methods, constructors, or blocks.</li><br>
+                <li>Local variables are created when the method, constructor or block is entered and the variable will be destroyed once it exits the method, constructor, or block.</li><br>
+                <li>Access modifiers cannot be used for local variables.</li><br>
+                <li>Local variables are visible only within the declared method, constructor, or block.</li><br>
+                <li>Local variables are implemented at stack level internally.</li><br>
+                <li>There is no default value for local variables, so local variables should be declared and an initial value should be assigned before the first use.</li><br>
+            </ul>        
+            <p><b>Example</b></p>
+            <p>Here, age is a local variable. This is defined inside pupAge() method and its scope is limited to only this method.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                public class Test {<br>
+                    public void pupAge() {<br>
+                       int age = 0;<br>
+                       age = age + 7;<br>
+                       System.out.println("Puppy age is : " + age);<br>
+                    }<br>
+                 
+                    public static void main(String args[]) {<br>
+                       Test test = new Test();<br>
+                       test.pupAge();<br>
+                    }<br>
+                 }
+            </p>    
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Puppy age is: 7
+            </p>
+            <h2 style="background-color:  bisque;width: 210px;height: auto;color: brown;">Instance Variables</h2>
+            <ul>
+                <li>Instance variables are declared in a class, but outside a method, constructor or any block</li><br>
+                <li>When a space is allocated for an object in the heap, a slot for each instance variable value is created.</li><br>
+                <li>Instance variables are created when an object is created with the use of the keyword 'new' and destroyed when the object is destroyed.</li><br>
+                <li>Instance variables hold values that must be referenced by more than one method, constructor or block, or essential parts of an object's state that must be present throughout the class.</li><br>
+                <li>Instance variables can be declared in class level before or after use.</li><br>
+                <li>Access modifiers can be given for instance variables.</li><br>
+                <li>The instance variables are visible for all methods, constructors and block in the class. Normally, it is recommended to make these variables private (access level). However, visibility for subclasses can be given for these variables with the use of access modifiers.</li><br>
+                <li>Instance variables have default values. For numbers, the default value is 0, for Booleans it is false, and for object references it is null. Values can be assigned during the declaration or within the constructor.</li><br>
+            </ul>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                import java.io.*;<br>
+                public class Employee {<br>
+                
+                   // this instance variable is visible for any child class.<br>
+                   public String name;<br>
+                
+                   // salary  variable is visible in Employee class only.<br>
+                   private double salary;<br>
+                
+                   // The name variable is assigned in the constructor.<br>
+                   public Employee (String empName) {<br>
+                      name = empName;<br>
+                   }<br>
+                
+                   // The salary variable is assigned a value.<br>
+                   public void setSalary(double empSal) {<br>
+                      salary = empSal;<br>
+                   }<br>
+                
+                   // This method prints the employee details.<br>
+                   public void printEmp() {<br>
+                    System.out.println("name  : " + name );<br>
+                    System.out.println("salary :" + salary);<br>
+                   }<br>
+              
+                 public static void main(String args[]) {<br>
+                    Employee empOne = new Employee("Ransika");<br>
+                    empOne.setSalary(1000);<br>
+                    empOne.printEmp();<br>
+                 }<br>
+              }  </p>
+              <p>This will produce the following result −</p>
+              <p><b>Output</b></p>
+              <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                name  : Ransika<br>
+                salary : 1000.0
+            </p>
+              <h2 style="background-color:  bisque;width: 245px;height: auto;color: brown;">Class/Static Variables</h2>
+            <ul>
+                <li>Class variables also known as static variables are declared with the static keyword in a class, but outside a method, constructor or a block.</li><br>
+                <li>There would only be one copy of each class variable per class, regardless of how many objects are created from it.</li><br>
+                <li>Static variables are rarely used other than being declared as constants. Constants are variables that are declared as public/private, final, and static. Constant variables never change from their initial value.</li><br>
+                <li>Static variables are stored in the static memory. It is rare to use static variables other than declared final and used as either public or private constants.</li><br>
+                <li>Static variables are created when the program starts and destroyed when the program stops.</li><br>
+                <li>Visibility is similar to instance variables. However, most static variables are declared public since they must be available for users of the class.</li><br>
+                <li>Static variables can be accessed by calling with the class name ClassName.VariableName.</li><br>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                import java.io.*;<br>
+                public class Employee {<br>
+                
+                   // salary  variable is a private static variable<br>
+                   private static double salary;<br>
+                
+                   // DEPARTMENT is a constant<br>
+                   public static final String DEPARTMENT = "Development ";<br>
+                
+                   public static void main(String args[]) {<br>
+                      salary = 1000;<br>
+                      System.out.println(DEPARTMENT + "average salary:" + salary);<br>
+                   }<br>
+                }
+                </p>
+                <p>This will produce the following result −</p>
+                <p><b>Output</b></p>
+                <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                    Development average salary:1000</p>
+            </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

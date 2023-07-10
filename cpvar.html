@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Tutorial</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+         
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+        
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 330px;height: auto;font-size: 35px;color: brown;">C++ -Variable Types</h1>   
+          </div>
+        </div>
+      
+        <p><b>A variable provides us with named storage that our programs can manipulate. Each variable in C++ has a specific type, which determines the <br>
+           size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be <br>
+            applied to the variable.The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either <br>
+             a letter or an underscore. Upper and lowercase letters are distinct because C++ is case-sensitive.There are following basic types of <br>
+              variable in C++ as explained in last chapter
+
+ <ul>
+  <li>bool - Stores either value true or false.</li>
+  <li>char - Typically a single octet (one byte). This is an integer type.</li>
+  <li>	
+    int - The most natural size of integer for the machine.</li>
+  <li>float - A single-precision floating point value.</li>
+  <li>double - A double-precision floating point value.</li>
+  <li>void - Represents the absence of type.</li>
+  <li>wchar_t - A wide character type.</li>
+ </ul>
+ <p><b>C++ also allows to define various other types of variables, which we will cover in subsequent chapters like Enumeration, Pointer, Array, Reference, <br>
+   Data structures, and Classes.Following section will cover how to define, declare and use various types of variables.</b></p>
+            <h2 style="background-color: bisque;width: 280px;height: auto;color: brown;">Variable Definition in C++</h2>
+            <p><b>A variable definition tells the compiler where and how much storage to create for the variable. A variable definition specifies a data type, <br>
+               and contains a list of one or more variables of that type as follows</b></p>
+            <p>type variable_list;
+              </p>
+              <p><b>Here, type must be a valid C++ data type including char, w_char, int, float, double, bool or any user-defined object, etc., and variable_list <br>
+                 may consist of one or more identifier names separated by commas. Some valid declarations are shown here</b></p>
+              <p>int    i, j, k; <br>
+                char   c, ch; <br>
+                float  f, salary; <br>
+                double d;</p>
+                <p><b>The line int i, j, k; both declares and defines the variables i, j and k; which instructs the compiler to create variables named i, j and k <br>
+                   of type int.Variables can be initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed <br>
+                    by a constant expression as follows</b></p>
+                    <p>type variable_name = value;</p>
+                    <p><b>Some examples are </b></p>
+                    <p><b>extern int d = 3, f = 5;    // declaration of d and f. <br>
+                      int d = 3, f = 5;           // definition and initializing d and f. <br> 
+                      byte z = 22;                // definition and initializes z.  <br>
+                      char x = 'x';               // the variable x has the value 'x'.</b></p>
+          <p><b>For definition without an initializer: variables with static storage duration are implicitly initialized with NULL (all bytes have the value 0); the <br>
+             initial value of all other variables is undefined.</b></p>
+                <h2 style="background-color: bisque;width: 300px;height: auto;color: brown;">Variable Declaration in C++</h2>
+                <p><b>A variable declaration provides assurance to the compiler that there is one variable existing with the given type and name so that compiler <br>
+                   proceed for further compilation without needing complete detail about the variable. A variable declaration has its meaning at the time of <br>
+                    compilation only, compiler needs actual variable definition at the time of linking of the program.A variable declaration is useful when you <br>
+                     are using multiple files and you define your variable in one of the files which will be available at the time of linking of the program. <br>
+                      You will use extern keyword to declare a variable at any place. Though you can declare a variable multiple times in your C++ program, but <br>
+                       it can be defined only once in a file, a function or a block of code.</b></p>
+                       <h3>Example</h3>
+                       <p><b>Try the following example where a variable has been declared at the top, but it has been defined inside the main function</b></p>
+                       <p>#include <iostream> <br>
+                        using namespace std; <br>
+                        
+                        // Variable declaration: <br>
+                        extern int a, b; <br>
+                        extern int c; <br>
+                        extern float f; <br>
+                          
+                        int main () { <br>
+                           // Variable definition: <br>
+                           int a, b; <br>
+                           int c; <br>
+                           float f; <br>
+                         
+                           // actual initialization <br>
+                           a = 10; <br>
+                           b = 20; <br>
+                           c = a + b; <br>
+                         
+                           cout << c << endl ; <br>
+                        
+                           f = 70.0/3.0; <br>
+                           cout << f << endl ; <br>
+                         
+                           return 0; <br>
+                        }</p>
+                        <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                        <p>30 <br>
+                          23.3333</p>
+                          <p><b>Same concept applies on function declaration where you provide a function name at the time of its declaration and its actual definition <br>
+                             can be given anywhere else. For example</b></p>
+                             <p>// function declaration <br>
+                              int func(); <br>
+                              int main() { <br>
+                                 // function call <br>
+                                 int i = func(); <br>
+                              } <br>
+                              
+                              // function definition <br>
+                              int func() { <br>
+                                 return 0; <br>
+                              }</p>
+              
+            <h2 style="background-color: bisque;width: 220px;height: auto;color: brown;">Lvalues and Rvalues</h2>
+            <p><b>There are two kinds of expressions in C++</b></p>
+            <ul>
+              <li>lvalue - Expressions that refer to a memory location is called "lvalue" expression. An lvalue may appear as either the left-hand or right-hand side of an assignment.</li>
+              <li>lvalue - Expressions that refer to a memory location is called "lvalue" expression. An lvalue may appear as either the left-hand or right-hand side of an assignment.</li>
+            </ul>
+            <p><b>Variables are lvalues and so may appear on the left-hand side of an assignment. Numeric literals are rvalues and so may not be assigned and can not appear on <br>
+               the left-hand side. Following is a valid statement</b></p>
+               <p>int g = 20;</p>
+               <p><b>But the following is not a valid statement and would generate compile-time error</b></p>
+               <p>10 = 20;</p>
+
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

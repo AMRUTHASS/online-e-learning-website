@@ -1,0 +1,167 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Decision making</title>
+    <style>
+                :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 320px;height: auto;font-size: 35px;color: brown;">C - Decision Making</h1>   
+            </div>
+          </div>   
+      
+        <p><b>Decision making structures require that the programmer specifies one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed <br>
+             if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.Show below is the general form of a typical decision  <br>
+             making structure found in most of the programming languages.C programming language assumes any non-zero and non-null values as true, and if it is either zero or null, then it is assumed as false value. <br>
+
+             C programming language provides the following types of decision making statements.
+             </b></p>
+             <ol>
+                <li>if statement - An if statement consists of a boolean expression followed by one or more statements.</li>
+                <li>if...else statement - An if statement can be followed by an optional else statement, which executes when the Boolean expression is false.</li>
+                <li>nested if statements - You can use one if or else if statement inside another if or else if statement(s).</li>
+                <li>switch statement - A switch statement allows a variable to be tested for equality against a list of values.</li>
+                <li>nested switch statements - You can use one switch statement inside another switch statement(s).</li>
+             </ol>
+        
+            <h2 style="background-color:  bisque;width: 190px;height: auto;color: brown;">The ? : Operator</h2>
+            <p><b>We have covered conditional operator ? : in the previous chapter which can be used to replace if...else statements. It has the following general form
+    </b></p>
+        <p>Exp1 ? Exp2 : Exp3;</p>
+        <p><b>Where Exp1, Exp2, and Exp3 are expressions. Notice the use and placement of the colon. <br>
+              The value of a ? expression is determined like this</b></p>
+              <ul>
+                <li>Exp1 is evaluated. If it is true, then Exp2 is evaluated and becomes the value of the entire ? expression.</li>
+                <li>If Exp1 is false, then Exp3 is evaluated and its value becomes the value of the expression.</li>
+              </ul>
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        
+    
+    
+</body>
+</html>

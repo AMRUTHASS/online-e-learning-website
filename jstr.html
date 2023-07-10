@@ -1,0 +1,302 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Strings</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 210px;height: auto;font-size: 35px;color: brown;">Java-Strings</h1>   
+            </div>
+          </div>  
+          <p>Strings, which are widely used in Java programming, are a sequence of characters. In Java programming language, strings are treated as objects.
+        <br>
+            The Java platform provides the String class to create and manipulate strings.</p> 
+            <h2 style="background-color:  bisque;width: 185px;height: auto;color: brown;">Creating Strings</h2>
+            <p>The most direct way to create a string is to write −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                String greeting = "Hello world!";
+            </p>
+            <p>Whenever it encounters a string literal in your code, the compiler creates a String object with its value in this case, "Hello world!'.
+            <br><br>
+                As with any other object, you can create String objects by using the new keyword and a constructor. The String class has 11 constructors that allow you to provide the initial value of the string using different sources, such as an array of characters.</p>
+            <p><b>Example</b></p>
+                <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                    public class StringDemo {<br>
+
+                        public static void main(String args[]) {<br>
+                           char[] helloArray = { 'h', 'e', 'l', 'l', 'o', '.' };<br>
+                           String helloString = new String(helloArray);  <br>
+                           System.out.println( helloString );<br>
+                        }<br>
+                     }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                hello.
+            </p>
+            <p><b>Note</b> − The String class is immutable, so that once it is created a String object cannot be changed. If there is a necessity to make a lot of modifications to Strings of characters, then you should use String Buffer & String Builder Classes.</p>
+            <h2 style="background-color:  bisque;width: 155px;height: auto;color: brown;">String Length</h2>
+            <p>Methods used to obtain information about an object are known as accessor methods. One accessor method that you can use with strings is the length() method, which returns the number of characters contained in the string object.
+            <br><br>
+            The following program is an example of length(), method String class.</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                public class StringDemo {<br>
+
+                    public static void main(String args[]) {<br>
+                       String palindrome = "Dot saw I was Tod";<br>
+                       int len = palindrome.length();<br>
+                       System.out.println( "String Length is : " + len );<br>
+                    }<br>
+                 }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                String Length is : 17
+            </p>
+            <h2 style="background-color:  bisque;width: 255px;height: auto;color: brown;">Concatenating Strings</h2>
+            <p>The String class includes a method for concatenating two strings −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                string1.concat(string2);
+            </p>
+            <p>This returns a new string that is string1 with string2 added to it at the end. You can also use the concat() method with string literals, as in −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                "My name is ".concat("Zara");
+            </p>
+            <p>Strings are more commonly concatenated with the + operator, as in −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                "Hello," + " world" + "!"
+            </p>
+            <p>which results in −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                "Hello, world!"
+            </p>
+            <h2 style="background-color:  bisque;width: 185px;height: auto;color: brown;">String Methods</h2>
+            <p>Here is the list of methods supported by String class −</p>
+            <table style="border:1px solid black;">
+                <tr>
+                    <th>S.No</th>
+                    <th>Method & Description</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>char charAt(int index)
+                    Returns the character at the specified index.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>int compareTo(Object o)
+                    Compares this String to another Object.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>int compareTo(String anotherString)
+                    Compares two strings lexicographically.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>int compareToIgnoreCase(String str)
+                    Compares two strings lexicographically, ignoring case differences.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>String concat(String str)
+                    Concatenates the specified string to the end of this string.</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>boolean contentEquals(StringBuffer sb)
+                    Returns true if and only if this String represents the same sequence of characters as the specified StringBuffer.</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>static String copyValueOf(char[] data)
+                    Returns a String that represents the character sequence in the array specified.</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>static String copyValueOf(char[] data, int offset, int count)
+                    Returns a String that represents the character sequence in the array specified.</td>
+                </tr>
+                </table>
+                <p>When an escape sequence is encountered in a print statement, the compiler interprets it accordingly.</p>
+               <p><b>Example</b></p>
+               <p>If you want to put quotes within quotes, you must use the escape sequence, \", on the interior quotes −</p>
+               <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                public class Test {<br>
+
+                    public static void main(String args[]) {<br>
+                       System.out.println("She said \"Hello!\" to me.");<br>
+                    }<br>
+                 }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                She said "Hello!" to me.
+            </p>
+            <h2 style="background-color:  bisque;width: 225px;height: auto;color: brown;">Character Methods</h2>
+            <p>Following is the list of the important instance methods that all the subclasses of the Character class implement −</p>
+            <ul>
+                <li>isLetter() - 
+                    Determines whether the specified char value is a letter.
+                </li>
+                <li>isDigit() - 
+                    Determines whether the specified char value is a digit.
+                </li>
+                <li>isWhitespace() - 
+                    Determines whether the specified char value is white space.
+                </li>
+                <li>isUpperCase() - 
+                    Determines whether the specified char value is uppercase.
+                </li>
+                <li>isLowerCase() - 
+                    Determines whether the specified char value is lowercase.
+                </li>
+                <li>toUpperCase() - 
+                    Returns the uppercase form of the specified char value.
+                </li>
+                <li>toLowerCase() - 
+                    Returns the lowercase form of the specified char value.
+                </li>
+                <li>toString() -
+                    Returns a String object representing the specified character value that is, a one-character string.
+                </li>
+                </ul>
+
+        </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

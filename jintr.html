@@ -1,0 +1,273 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Interface</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+        
+          <p id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 240px;height: auto;font-size: 35px;color: brown;">Java-Interface</h1>   
+            </div>
+          </div>  
+          <p>An interface is a reference type in Java. It is similar to class. It is a collection of abstract methods. A class implements an interface, thereby inheriting the abstract methods of the interface.
+            <br>
+            Along with abstract methods, an interface may also contain constants, default methods, static methods, and nested types. Method bodies exist only for default methods and static methods.
+            <br>
+            Writing an interface is similar to writing a class. But a class describes the attributes and behaviors of an object. And an interface contains behaviors that a class implements.
+            <br>
+            Unless the class that implements the interface is abstract, all the methods of the interface need to be defined in the class.
+        <br><br>
+        An interface is similar to a class in the following ways −
+        </p> 
+        <ul>
+            <li>An interface can contain any number of methods.</li><br>
+            <li>An interface is written in a file with a <b>.java</b> extension, with the name of the interface matching the name of the file.</li><br>
+            <li>The byte code of an interface appears in a <b>.class</b> file.</li><br>
+            <li>Interfaces appear in packages, and their corresponding bytecode file must be in a directory structure that matches the package name.</li>
+        </ul>
+        <p>However, an interface is different from a class in several ways, including −</p>
+        <ul>
+            <li>You cannot instantiate an interface.</li><br>
+            <li>An interface does not contain any constructors.</li><br>
+            <li>All of the methods in an interface are abstract.</li><br>
+            <li>An interface cannot contain instance fields. The only fields that can appear in an interface must be declared both static and final.</li><br>
+            <li>An interface is not extended by a class; it is implemented by a class.</li><br>
+            <li>An interface can extend multiple interfaces.</li>
+        </ul>    
+        <h2 style="background-color:  bisque;width: 230px;height: auto;color: brown;">Declaring Interfaces</h2>
+        <p>The interface keyword is used to declare an interface. Here is a simple example to declare an interface −</p>
+        <p><b>Example</b></p>
+        <p>Following is an example of an interface −</p>
+        <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            /* File name : NameOfInterface.java */<br>
+            import java.lang.*;<br>
+            // Any number of import statements<br>
+
+            public interface NameOfInterface {<br>
+            // Any number of final, static fields<br>
+            // Any number of abstract method declarations\<br>
+            }
+            </p>
+            <p>Interfaces have the following properties −</p>
+            <ul>
+                <li>An interface is implicitly abstract. You do not need to use the abstract keyword while declaring an interface</li><br>
+                <li>Each method in an interface is also implicitly abstract, so the abstract keyword is not needed.</li><br>
+                <li>Methods in an interface are implicitly public.</li>
+            </ul>
+            <p><b>Example</b></p>
+                <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                    /* File name : Animal.java */<br>
+                    interface Animal {<br>
+                    public void eat();<br>
+                    public void travel();<br>
+                    }
+</p>
+            <h2 style="background-color:  bisque;width: 280px;height: auto;color: brown;">Implementing Interfaces</h2>
+            <p>When a class implements an interface, you can think of the class as signing a contract, agreeing to perform the specific behaviors of the interface. If a class does not perform all the behaviors of the interface, the class must declare itself as abstract.
+            <br>
+                A class uses the implements keyword to implement an interface. The implements keyword appears in the class declaration following the extends portion of the declaration.</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                /* File name : MammalInt.java */<br>
+                public class MammalInt implements Animal {<br>
+                
+                   public void eat() {<br>
+                      System.out.println("Mammal eats");<br>
+                   }
+                
+                   public void travel() {<br>
+                      System.out.println("Mammal travels");<br>
+                   } 
+                
+                   public int noOfLegs() {<br>
+                      return 0;<br>
+                   }<br>
+                
+                   public static void main(String args[]) {<br>
+                      MammalInt m = new MammalInt();<br>
+                      m.eat();<br>
+                      m.travel();<br>
+                   }<br>
+                } 
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Mammal eats<br>
+                Mammal travels
+            </p>
+            <p>When overriding methods defined in interfaces, there are several rules to be followed −</p>
+            <ul>
+                <li>Checked exceptions should not be declared on implementation methods other than the ones declared by the interface method or subclasses of those declared by the interface method.</li>
+                <li>The signature of the interface method and the same return type or subtype should be maintained when overriding the methods.</li>
+                <li>An implementation class itself can be abstract and if so, interface methods need not be implemented.</li>
+            </ul>
+            <p>When implementation interfaces, there are several rules −</p>
+            <ul>
+                <li>A class can implement more than one interface at a time.</li>
+                <li>A class can extend only one class, but implement many interfaces.</li>
+                <li>An interface can extend another interface, in a similar way as a class can extend another class.</li>
+            </ul>
+            <h2 style="background-color:  bisque;width: 280px;height: auto;color: brown;">Extending Interfaces</h2>
+            <p>An interface can extend another interface in the same way that a class can extend another class. The extends keyword is used to extend an interface, and the child interface inherits the methods of the parent interface.
+            <br><br>
+           The following Sports interface is extended by Hockey and Football interfaces.</p>
+           <p><b>Example</b></p>
+           <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+           // Filename: Sports.java<br>
+           public interface Sports {<br>
+           public void setHomeTeam(String name);<br>
+           public void setVisitingTeam(String name);<br>
+           }<br>
+
+           // Filename: Football.java<br>
+            public interface Football extends Sports {<br>
+            public void homeTeamScored(int points);<br>
+            public void visitingTeamScored(int points);<br>
+            public void endOfQuarter(int quarter);<br>
+            }<br>
+
+            // Filename: Hockey.java<br>
+            public interface Hockey extends Sports {<br>
+            public void homeGoalScored();<br>
+            public void visitingGoalScored();<br>
+            public void endOfPeriod(int period);<br>
+            public void overtimePeriod(int ot);<br>
+}
+</p>
+        <p>The Hockey interface has four methods, but it inherits two from Sports; thus, a class that implements Hockey needs to implement all six methods. Similarly, a class that implements Football needs to define the three methods from Football and the two methods from Sports.</p>
+         </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

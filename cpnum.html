@@ -1,0 +1,259 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers in C++ </title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+          
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+       
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+        
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 260px;height: auto;font-size: 35px;color: brown;">Numbers in C++</h1>   
+          </div>
+        </div>
+      
+        <p><b>Normally, when we work with Numbers, we use primitive data types such as int, short, long, float and double, etc. The number data types, their possible values and number ranges <br>
+             have been explained while discussing C++ Data Types. </b></p>
+             <h1 style="background-color: bisque;width: 400px;height: auto;font-size: 35px;color: brown;">Defining Numbers in C++</h1>   
+             <p><b>You have already defined numbers in various examples given in previous chapters. Here is another consolidated example to define various types of numbers in C++</b></p>
+             <p>#include <iostream> <br>
+                using namespace std;  <br>
+        
+                 
+                int main () { <br>
+                   // number definition: <br>
+                   short  s; <br>
+                   int    i; <br>
+                   long   l; <br>
+                   float  f; <br>
+                   double d; <br>
+                   
+                   // number assignments; <br>
+                   s = 10;      <br>
+                   i = 1000;    <br>
+                   l = 1000000; <br>
+                   f = 230.47;  <br>
+                   d = 30949.374;<br>
+                   
+                   // number printing; <br>
+                   cout << "short  s :" << s << endl; <br>
+                   cout << "int    i :" << i << endl; <br>
+                   cout << "long   l :" << l << endl; <br>
+                   cout << "float  f :" << f << endl; <br>
+                   cout << "double d :" << d << endl; <br>
+                 
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                <p>short  s :10 <br>
+                    int    i :1000 <br>
+                    long   l :1000000 <br>
+                    float  f :230.47 <br>
+                    double d :30949.4</p>
+
+            <h2 style="background-color: bisque;width: 260px;height: auto;color: brown;">Math Operations in C++</h2>
+            <p><b>In addition to the various functions you can create, C++ also includes some useful functions you can use. These functions are available in standard C and C++ <br>
+                 libraries and called built-in functions. These are functions that can be included in your program and then use.C++ has a rich set of mathematical operations, <br>
+                  which can be performed on various numbers. Following table lists down some useful built-in mathematical functions available in C++.To utilize these functions <br>
+                   you need to include the math header file <cmath>.</b></p>
+          <ol>
+            <li>double cos(double); - This function takes an angle (as a double) and returns the cosine.</li>
+            <li>double sin(double); - This function takes an angle (as a double) and returns the sine.</li>
+            <li>double tan(double); -  function takes an angle (as a double) and returns the tangent.</li>
+            <li>double log(double); - This function takes a number and returns the natural log of that number.</li>
+            <li>double pow(double, double); - The first is a number you wish to raise and the second is the power you wish to raise it t</li>
+            <li>double hypot(double, double); - If you pass this function the length of two sides of a right triangle, it will return you the length of the hypotenuse.</li>
+            <li>double sqrt(double); - You pass this function a number and it gives you the square root.</li>
+            <li>int abs(int); - This function returns the absolute value of an integer that is passed to it.</li>
+            <li>double fabs(double); - This function returns the absolute value of any decimal number passed to it.</li>
+            <li>double floor(double); - Finds the integer which is less than or equal to the argument passed to it.</li>
+          </ol>
+          <p><b>Following is a simple example to show few of the mathematical operations</b></p>
+           <p>#include <iostream> <br>
+            #include <cmath> <br>
+            using namespace std; <br>
+             
+            int main () { <br>
+               // number definition: <br>
+               short  s = 10; <br>
+               int    i = -1000; <br>
+               long   l = 100000; <br>
+               float  f = 230.47; <br>
+               double d = 200.374; <br>
+            
+               // mathematical operations; <br>
+               cout << "sin(d) :" << sin(d) << endl; <br>
+               cout << "abs(i)  :" << abs(i) << endl; <br>
+               cout << "floor(d) :" << floor(d) << endl; <br>
+               cout << "sqrt(f) :" << sqrt(f) << endl; <br>
+               cout << "pow( d, 2) :" << pow(d, 2) << endl; <br>
+             
+               return 0; <br>
+            }</p>
+            <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+            <p>sign(d)     :-0.634939 <br>
+                abs(i)      :1000 <br>
+                floor(d)    :200 <br>
+                sqrt(f)     :15.1812 <br>
+                pow( d, 2 ) :40149.7</p>
+
+                <h2 style="background-color: bisque;width: 270px;height: auto;color: brown;">Random Numbers in C++</h2>
+                <p><b>There are many cases where you will wish to generate a random number. There are actually two functions you will need to know about random number generation. The first is rand(), this function will only return a pseudo random <br>
+                     number. The way to fix this is to first call the srand() function.Following is a simple example to generate few random numbers. This example makes use of time() function to get the number of seconds on your system time, to <br>
+                      randomly seed the rand() function</b></p>
+                      <p>#include <iostream> <br>
+                        #include <ctime><br>
+                        #include <cstdlib> <br>
+                        
+                        using namespace std; <br>
+                         
+                        int main () { <br>
+                           int i,j; <br>
+                         
+                           // set the seed <br>
+                           srand( (unsigned)time( NULL ) ); <br>
+                        
+                           /* generate 10  random numbers. */ <br>
+                           for( i = 0; i < 10; i++ ) { <br>
+                              // generate actual random number <br>
+                              j = rand(); <br>
+                              cout <<" Random Number : " << j << endl; <br>
+                           }<br>
+                        
+                           return 0; <br>
+                        }</p>
+                        <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                        <p>Random Number : 1748144778 <br>
+                            Random Number : 630873888 <br>
+                            Random Number : 2134540646 <br>
+                            Random Number : 219404170 <br>
+                            Random Number : 902129458 <br>
+                            Random Number : 920445370 <br>
+                            Random Number : 1319072661 <br>
+                            Random Number : 257938873 <br>
+                            Random Number : 1256201101 <br>
+                            Random Number : 580322989</p>
+
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

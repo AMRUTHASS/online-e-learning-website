@@ -1,0 +1,274 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-variables and constants</title>
+    <style>
+        :root,
+:root.light {
+--color-bg: #ffffff;
+--color-fg: #000000;
+--card-bg-color: #fafafa;
+}
+:root.dark {
+--color-bg: #263238;
+--color-fg: #ffffff;
+--card-bg-color: #607d8b;
+}
+body {
+background-color: var(--color-bg);
+color: var(--color-fg);
+}
+
+.card {
+background-color: var(--card-bg-color) !important;
+}
+
+:root,
+:root.light {
+--color-bg: #ffffff;
+--color-fg: #000000;
+--card-bg-color: #fafafa;
+}
+:root.dark {
+--color-bg: #263238;
+--color-fg: #ffffff;
+--card-bg-color: #607d8b;
+}
+
+body {
+background-color: var(--color-bg);
+color: var(--color-fg);
+}
+
+.card {
+background-color: var(--card-bg-color) !important;
+}
+
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+      
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 430px;height: auto;font-size: 35px;color: brown;">C-Varibales and Constants</h1>   
+            </div>
+          </div>   
+        <h2 style="background-color:   bisque;width: 140px;height: auto;color: brown;">C-Variables</h2>
+        <p><b>A variable is nothing but a name given to a storage area that our programs can manipulate. Each variable in C has a specific type, <br>
+             which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations <br>
+             that can be applied to the variable.The name of a variable can be composed of letters, digits, and the underscore character. It must begin with either a <br>
+              letter or an underscore. Upper and lowercase letters are distinct because C is case-sensitive. Based on the basic types explained in the previous chapter, there will <br>
+               be the following basic variable types</b></p>
+               <ol><b>
+                <li>char - Typically a single octet(one byte). It is an integer type.</li>
+                <li>int - The most natural size of integer for the machine.</li>
+                <li>float - A single-precision floating point value.</li>
+                <li>double - A double-precision floating point value.</li>
+                <li>void - Represents the absence of type.</li>
+               </b></ol>
+               <p><b>C programming language also allows to define various other types of variables, which we will cover in subsequent chapters like Enumeration, Pointer, Array, <br>
+                 Structure, Union, etc. For this chapter, let us study only basic variable types.</b></p>
+            <h2 style="background-color:  bisque;width: 250px;height: auto;color: brown;">Variable Definition in C</h2>
+            <p><b>A variable definition tells the compiler where and how much storage to create for the variable. A variable definition specifies a data type and contains a list <br>
+                 of one or more variables of that type as follows</b></p>
+                 <p>type variable_list;</p>
+                 <p><b>Here, type must be a valid C data type including char, w_char, int, float, double, bool, or any user-defined object; and variable_list may consist of one or <br>
+                     more identifier names separated by commas. Some valid declarations are shown here</b></p>
+                     <p>int    i, j, k; <br>
+                        char   c, ch; <br>
+                        float  f, salary; <br>
+                        double d;
+                        </p>
+                        <p><b>The line int i, j, k; declares and defines the variables i, j, and k; which instruct the compiler to create variables named i, j and k of type int. <br>
+                            Variables can be initialized (assigned an initial value) in their declaration. The initializer consists of an equal sign followed by a constant expression as follows</b></p>
+                            <p>type variable_name = value;</p>
+                            <p><b>Some examples are </b></p>
+                            <p>extern int d = 3, f = 5;    // declaration of d and <br>
+                                int d = 3, f = 5;           // definition and initializing d and f. <br> 
+                                byte z = 22;                // definition and initializes z. <br>
+                                char x = 'x';               // the variable x has the value 'x'. <br>
+                                </p>
+                                <p><b>For definition without an initializer: variables with static storage duration are implicitly initialized with NULL (all bytes have the value 0); <br>
+                                     the initial value of all other variables are undefined.</b></p>
+            <h2 style="background-color:  bisque;width: 280px;height: auto;color: brown;">Variable Declaration in C</h2>
+            <p><b>A variable declaration provides assurance to the compiler that there exists a variable with the given type and name so that the compiler can proceed for further compilation <br>
+                 without requiring the complete detail about the variable. A variable definition has its meaning at the time of compilation only, the compiler needs actual variable definition <br>
+                  at the time of linking the program. <br>
+                   A variable declaration is useful when you are using multiple files and you define your variable in one of the files which will be available at the time of linking of the program. <br>
+                    You will use the keyword extern to declare a variable at any place. Though you can declare a variable multiple times in your C program, it can be defined only once in a file, <br>
+                     a function, or a block of code. 
+        </b></p>
+        
+            <h2 style="background-color:  bisque;width: 280px;height: auto;color: brown;">Lvalues and Rvalues in C</h2>
+            <p><b>There are two kinds of expressions in C .</b></p>
+            <ul>
+                <li>lvalue - Expressions that refer to a memory location are called "lvalue" expressions. An lvalue may appear as either the left-hand or right-hand side of an assignment.</li>
+                <li>rvalue - The term rvalue refers to a data value that is stored at some address in memory. An rvalue is an expression that cannot have a value assigned to it which means <br>
+                    an rvalue may appear on the right-hand side but not on the left-hand side of an assignment.</li>
+               </ul>
+               <p><b>Variables are lvalues and so they may appear on the left-hand side of an assignment. Numeric literals are rvalues and so they may not be assigned and cannot appear on the <br>
+                 left-hand side.
+                 Take a look at the following valid and invalid statements</b></p>
+                 <p>int g = 20; // valid statement <br>
+
+                    10 = 20; // invalid statement; would generate compile-time error
+                    </p>
+                    <h1 style="background-color: lightcoral;width: 430px;height: auto;font-size: 35px;color: brown;">C - Constants and Literals</h1> 
+                    <p><b>Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called literals. <br>
+
+                        Constants can be of any of the basic data types like an integer constant, a floating constant, a character constant, or a string literal. <br> There are enumeration constants as well.
+                        
+                        Constants are treated just like regular variables except that their values cannot <br> be modified after their definition.</b>
+                    </p>
+
+                    <h2 style="background-color:  bisque;width: 180px;height: auto;color: brown;">Integer Literals</h2>
+          <p><b>An integer literal can be a decimal, octal, or hexadecimal constant. A prefix specifies the base or radix: 0x or 0X for hexadecimal, 0 for octal, and nothing for decimal. <br>
+
+            An integer literal can also have a suffix that is a combination of U and L, for unsigned and long, respectively. The suffix can be uppercase or lowercase and can be in any order. <br>
+            
+            Here are some examples of integer literals</b></p>
+            <p>212     -    /* Legal */ <br>
+                215u   -    /* Legal */ <br>
+                0xFeeL -  /* Legal */ <br>
+                078    -     /* Illegal: 8 is not an octal digit */ <br>
+                032UU  -   /* Illegal: cannot repeat a suffix */</p>
+                <p><b>Following are other examples of various types of integer literals</b></p>
+                <p>85        - /* decimal */ <br>
+                    0213     -  /* octal */ <br>
+                    0x4b     -  /* hexadecimal */ <br>
+                    30       -  /* int */ <br>
+                    30u      - /* unsigned int */ <br>
+                    30l      -  /* long */ <br>
+                    30ul     -  /* unsigned long */</p>
+                    <h2 style="background-color:  bisque;width: 250px;height: auto;color: brown;">Floating-point Literals</h2>
+                    <p><b>A floating-point literal has an integer part, a decimal point, a fractional part, and an exponent part. You can represent floating point literals either in decimal form <br>
+                         or exponential form.
+
+                        While representing decimal form, you must include the decimal point, the exponent, or both; and while representing exponential form, <br> you must include the integer part, the fractional part, or both. The signed exponent is introduced by e or E.
+                        
+                        Here are some examples of <br> floating-point literals</b></p>
+                        <p>3.14159      - /* Legal */ <br>
+                            314159E-5L  - /* Legal */ <br>
+                            510E        -  /* Illegal: incomplete exponent */ <br>
+                            210f        -  /* Illegal: no decimal or exponent */ <br>
+                            .e55        -  /* Illegal: missing integer or fraction */</p>
+                            <h2 style="background-color:  bisque;width: 230px;height: auto;color: brown;">Character Constants</h2>
+                            <p><b>Character literals are enclosed in single quotes, e.g., 'x' can be stored in a simple variable of char type. <br>
+
+                                A character literal can be a plain character (e.g., 'x'), an escape sequence (e.g., '\t'), or a universal character (e.g., '\u02C0'). <br>
+                                
+                                There are certain characters in C that represent special meaning when preceded by a backslash for example, newline (\n) or tab (\t).</b></p>
+                                <h2 style="background-color:  bisque;width: 160px;height: auto;color: brown;">String Literals</h2>  
+                                <p><b>String literals or constants are enclosed in double quotes "". A string contains characters that are similar to character literals: plain characters, escape sequences, and universal characters. <br>
+
+                                    You can break a long line into multiple lines using string literals and separating them using white spaces.
+                                    
+                                    Here are some examples of string literals. All the three forms are identical strings.</b></p>
+                                    <p>"hello, dear" <br>
+
+                                        "hello, \ <br>
+                                        
+                                        dear" <br>
+                                        
+                                        "hello, " "d" "ear"</p>
+                                        <h2 style="background-color:  bisque;width: 280px;height: auto;color: brown;">The #define Preprocessor</h2>
+                                        <p><b>Given below is the form to use #define preprocessor to define a constant</b></p>
+                                        <p>#define identifier value</p>
+                                        <h2 style="background-color:  bisque;width: 210px;height: auto;color: brown;">The const Keyword</h2>
+                                        <p><b>You can use const prefix to declare constants with a specific type as follows</b></p>
+                                        <p>const type variable = value;</p>
+
+
+                              
+
+
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+  
+    
+    
+    
+</body>
+</html>

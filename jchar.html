@@ -1,0 +1,261 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Characters</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 270px;height: auto;font-size: 35px;color: brown;">Java-Characters</h1>   
+            </div>
+          </div>  
+          <p>Normally, when we work with characters, we use primitive data types char.</p> 
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                char ch = 'a';<br>
+
+                // Unicode for uppercase Greek omega character<br>
+                char uniChar = '\u039A';<br> 
+
+                // an array of chars<br>
+                char[] charArray ={ 'a', 'b', 'c', 'd', 'e' }; 
+            </p>
+            <p>However in development, we come across situations where we need to use objects instead of primitive data types. In order to achieve this, Java provides wrapper class Character for primitive data type char.
+            <br><br>
+                The Character class offers a number of useful class (i.e., static) methods for manipulating characters. You can create a Character object with the Character constructor −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Character ch = new Character('a');
+            </p>
+            <p>The Java compiler will also create a Character object for you under some circumstances. For example, if you pass a primitive char into a method that expects an object, the compiler automatically converts the char to a Character for you. This feature is called autoboxing or unboxing, if the conversion goes the other way.</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                // Here following primitive char 'a'<br>
+                // is boxed into the Character object ch<br>
+                Character ch = 'a';<br>
+
+                // Here primitive 'x' is boxed for method test,<br>
+                // return is unboxed to char 'c'<br>
+                char c = test('x');<br>
+            </p>
+            <h2 style="background-color:  bisque;width: 205px;height: auto;color: brown;">Escape Sequences</h2>
+            A character preceded by a backslash (\) is an escape sequence and has a special meaning to the compiler.
+            <br>
+            The newline character (\n) has been used frequently in this tutorial in System.out.println() statements to advance to the next line after the string is printed.
+            <br>
+            Following shows the Java escape sequences −
+            <table>
+                <tr>
+                    <th>Escape Sequences</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>\t</td>
+                    <td>Inserts a tab in the text at this point.</td>
+                </tr>
+                <tr>
+                    <td>\b</td>
+                    <td>Inserts a backspace in the text at this point.</td>
+                </tr>
+                <tr>
+                    <td>\n</td>
+                    <td>Inserts a newline in the text at this point.</td>
+                </tr>
+                <tr>
+                    <td>\r</td>
+                    <td>Inserts a carriage return in the text at this point</td>
+                </tr>
+                <tr>
+                    <td>\f</td>
+                    <td>Inserts a form feed in the text at this point.</td>
+                </tr>
+                <tr>
+                    <td>\'</td>
+                    <td>Inserts a single quote character in the text at this point.</td>
+                </tr>
+                <tr>
+                    <td>\"</td>
+                    <td>Inserts a double quote character in the text at this point.</td>
+                </tr>
+                <tr>
+                    <td>\\</td>
+                    <td>Inserts a backslash character in the text at this point.</td>
+                </tr>
+                </table>
+                <p>When an escape sequence is encountered in a print statement, the compiler interprets it accordingly.</p>
+               <p><b>Example</b></p>
+               <p>If you want to put quotes within quotes, you must use the escape sequence, \", on the interior quotes −</p>
+               <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                public class Test {<br>
+
+                    public static void main(String args[]) {<br>
+                       System.out.println("She said \"Hello!\" to me.");<br>
+                    }<br>
+                 }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                She said "Hello!" to me.
+            </p>
+            <h2 style="background-color:  bisque;width: 205px;height: auto;color: brown;">Character Methods</h2>
+            <p>Following is the list of the important instance methods that all the subclasses of the Character class implement −</p>
+            <ul>
+                <li>isLetter() - 
+                    Determines whether the specified char value is a letter.
+                </li>
+                <li>isDigit() - 
+                    Determines whether the specified char value is a digit.
+                </li>
+                <li>isWhitespace() - 
+                    Determines whether the specified char value is white space.
+                </li>
+                <li>isUpperCase() - 
+                    Determines whether the specified char value is uppercase.
+                </li>
+                <li>isLowerCase() - 
+                    Determines whether the specified char value is lowercase.
+                </li>
+                <li>toUpperCase() - 
+                    Returns the uppercase form of the specified char value.
+                </li>
+                <li>toLowerCase() - 
+                    Returns the lowercase form of the specified char value.
+                </li>
+                <li>toString() -
+                    Returns a String object representing the specified character value that is, a one-character string.
+                </li>
+                </ul>
+
+        </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

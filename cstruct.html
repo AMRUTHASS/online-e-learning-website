@@ -1,0 +1,375 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+             :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 200px;height: auto;font-size: 35px;color: brown;">C-structures</h1>   
+            </div>
+          </div>   
+        <p><b>Arrays allow to define type of variables that can hold several data items of the same kind. Similarly structure is another user defined data type available in C <br>
+           that allows to combine data items of different kinds.Structures are used to represent a record. Suppose you want to keep track of your books in a library. You might <br>
+            want to track the following attributes about each book
+             </b></p>
+             <ol>
+              <li>Title</li>
+              <li>Author</li>
+              <li>Subject</li>
+              <li>Book ID</li>
+            </ol>
+        
+            <h2 style="background-color:  bisque;width: 220px;height: auto;color: brown;">Defining a Structure</h2>
+            <p><b>To define a structure, you must use the struct statement. The struct statement defines a new data type, with more than one member. The format of the struct <br>
+               statement is as follows 
+    </b></p>
+    <p>struct [structure tag] { <br>
+
+      member definition; <br>
+      member definition; <br>
+      ... <br>
+      member definition; <br>
+   } [one or more structure variables];  <br>
+   </p>
+   <p><b>The structure tag is optional and each member definition is a normal variable definition, such as int i; or float f; or any other valid variable definition. At the end of <br>
+     the structure's definition, before the final semicolon, you can specify one or more structure variables but it is optional. Here is the way you would declare the Book <br>
+      structure</b></p>
+      <p>struct Books { <br>
+        char  title[50]; <br>
+        char  author[50]; <br>
+        char  subject[100]; <br>
+        int   book_id; <br>
+     } book;  </p>
+        
+            <h2 style="background-color:  bisque;width: 310px;height: auto;color: brown;">Accessing Structure Members</h2>
+            <p><b>To access any member of a structure, we use the member access operator (.). The member access operator is coded as a period between the structure variable name <br>
+               and the structure member that we wish to access. You would use the keyword struct to define variables of structure type. The following example shows how to use <br>
+                a structure in a program
+            </b></p>
+            <p>#include <stdio.h> <br>
+              #include <string.h> <br>
+               
+              struct Books { <br>
+                 char  title[50]; <br>
+                 char  author[50]; <br>
+                 char  subject[100]; <br>
+                 int   book_id; <br>
+              }; <br>
+               
+              int main( ) { <br>
+              
+                 struct Books Book1;        /* Declare Book1 of type Book */ <br>
+                 struct Books Book2;        /* Declare Book2 of type Book */ <br>
+               
+                 /* book 1 specification */ <br>
+                 strcpy( Book1.title, "C Programming"); <br>
+                 strcpy( Book1.author, "Nuha Ali");  <br>
+                 strcpy( Book1.subject, "C Programming Tutorial"); <br>
+                 Book1.book_id = 6495407;  <br>
+              
+                 /* book 2 specification */ <br>
+                 strcpy( Book2.title, "Telecom Billing"); <br>
+                 strcpy( Book2.author, "Zara Ali"); <br>
+                 strcpy( Book2.subject, "Telecom Billing Tutorial"); <br>
+                 Book2.book_id = 6495700; <br>
+               
+                 /* print Book1 info */ <br>
+                 printf( "Book 1 title : %s\n", Book1.title); <br>
+                 printf( "Book 1 author : %s\n", Book1.author); <br>
+                 printf( "Book 1 subject : %s\n", Book1.subject); <br>
+                 printf( "Book 1 book_id : %d\n", Book1.book_id); <br>
+              
+                 /* print Book2 info */ <br>
+                 printf( "Book 2 title : %s\n", Book2.title); <br>
+                 printf( "Book 2 author : %s\n", Book2.author); <br>
+                 printf( "Book 2 subject : %s\n", Book2.subject); <br>
+                 printf( "Book 2 book_id : %d\n", Book2.book_id); <br>
+              
+                 return 0; <br>
+              }
+              </p>
+              <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+              <p>Book 1 title : C Programming <br>
+                Book 1 author : Nuha Ali <br>
+                Book 1 subject : C Programming Tutorial <br>
+                Book 1 book_id : 6495407 <br>
+                Book 2 title : Telecom Billing <br>
+                Book 2 author : Zara Ali <br>
+                Book 2 subject : Telecom Billing Tutorial <br>
+                Book 2 book_id : 6495700</p>
+          <h2 style="background-color:  bisque;width: 360px;height: auto;color: brown;">Structures as Function Arguments</h2>
+         <p><b>You can pass a structure as a function argument in the same way as you pass any other variable or pointer.</b></p>
+        <p>
+          #include <stdio.h> <br>
+            #include <string.h> <br>
+             
+            struct Books { <br>
+               char  title[50]; <br>
+               char  author[50]; <br>
+               char  subject[100]; <br>
+               int   book_id; <br>
+            }; <br>
+            
+            /* function declaration */ <br>
+            void printBook( struct Books book ); <br>
+            
+            int main( ) { <br>
+            
+               struct Books Book1;        /* Declare Book1 of type Book */ <br>
+               struct Books Book2;        /* Declare Book2 of type Book */ <br>
+             
+               /* book 1 specification */ <br>
+               strcpy( Book1.title, "C Programming"); <br>
+               strcpy( Book1.author, "Nuha Ali");  <br>
+               strcpy( Book1.subject, "C Programming Tutorial"); <br>
+               Book1.book_id = 6495407; <br>
+            
+               /* book 2 specification */ <br>
+               strcpy( Book2.title, "Telecom Billing"); <br>
+               strcpy( Book2.author, "Zara Ali"); <br>
+               strcpy( Book2.subject, "Telecom Billing Tutorial"); <br>
+               Book2.book_id = 6495700; <br>
+             
+               /* print Book1 info */ <br>
+               printBook( Book1 ); <br>
+            
+               /* Print Book2 info */ <br>
+               printBook( Book2 ); <br>
+            
+               return 0; <br>
+            } <br>
+            
+            void printBook( struct Books book ) { <br>
+            
+               printf( "Book title : %s\n", book.title); <br>
+               printf( "Book author : %s\n", book.author); <br>
+               printf( "Book subject : %s\n", book.subject); <br>
+               printf( "Book book_id : %d\n", book.book_id); <br>
+            } <br>
+        </p>
+        <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+        <p>Book title : C Programming <br>
+          Book author : Nuha Ali <br>
+          Book subject : C Programming Tutorial <br>
+          Book book_id : 6495407 <br>
+          Book title : Telecom Billing <br>
+          Book author : Zara Ali <br>
+          Book subject : Telecom Billing Tutorial <br>
+          Book book_id : 6495700</p>
+
+         <h2 style="background-color:  bisque;width: 240px;height: auto;color: brown;">Pointers to Structures</h2>
+            <p><b>You can define pointers to structures in the same way as you define pointer to any other variable</b></p>
+            <p>struct Books *struct_pointer;</p>
+            <p><b>Now, you can store the address of a structure variable in the above defined pointer variable.To find <br>
+               the address of a structure variable, place the '&'; operator before the structure's name as follows </b></p>
+               <p>struct_pointer = &Book1;</p>
+               <p><b>To access the members of a structure using a pointer to that structure, you must use the → operator as follows</b></p>
+               <p>struct_pointer->title;</p>
+               <p><b>Let us re-write the above example using structure pointer.</b></p>
+               <p>#include <stdio.h> <br>
+                #include <string.h> <br>
+                 
+                struct Books { <br>
+                   char  title[50]; <br>
+                   char  author[50]; <br>
+                   char  subject[100]; <br>
+                   int   book_id; <br>
+                }; <br>
+                
+                /* function declaration */ <br>
+                void printBook( struct Books *book ); <br>
+                int main( ) { <br>
+                
+                   struct Books Book1;        /* Declare Book1 of type Book */ <br>
+                   struct Books Book2;        /* Declare Book2 of type Book */ <br>
+                 
+                   /* book 1 specification */ <br>
+                   strcpy( Book1.title, "C Programming"); <br>
+                   strcpy( Book1.author, "Nuha Ali");  <br>
+                   strcpy( Book1.subject, "C Programming Tutorial"); <br>
+                   Book1.book_id = 6495407; <br>
+                
+                   /* book 2 specification */ <br>
+                   strcpy( Book2.title, "Telecom Billing"); <br>
+                   strcpy( Book2.author, "Zara Ali"); <br>
+                   strcpy( Book2.subject, "Telecom Billing Tutorial"); <br>
+                   Book2.book_id = 6495700; <br>
+                 
+                   /* print Book1 info by passing address of Book1 */ <br>
+                   printBook( &Book1 ); <br>
+                
+                   /* print Book2 info by passing address of Book2 */ <br>
+                   printBook( &Book2 ); <br>
+                
+                   return 0; <br>
+                } <br>
+                
+                void printBook( struct Books *book ) { <br>
+                
+                   printf( "Book title : %s\n", book->title); <br>
+                   printf( "Book author : %s\n", book->author); <br>
+                   printf( "Book subject : %s\n", book->subject); <br>
+                   printf( "Book book_id : %d\n", book->book_id); <br>
+                }</p>
+               <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+               <p>Book title : C Programming <br>
+                Book author : Nuha Ali <br>
+                Book subject : C Programming Tutorial <br>
+                Book book_id : 6495407 <br>
+                Book title : Telecom Billing <br>
+                Book author : Zara Ali <br>
+                Book subject : Telecom Billing Tutorial <br>
+                Book book_id : 6495700</p>
+                <h2 style="background-color:  bisque;width: 110px;height: auto;color: brown;">Bit Fields</h2>
+                <p><b>Bit Fields allow the packing of data in a structure. This is especially useful when memory or data storage is at a premium. <br>
+                   Typical examples include </b></p>
+                   <ul><b>
+                    <li>Packing several objects into a machine word. e.g. 1 bit flags can be compacted.</li>
+                    <li>Reading external file formats -- non-standard file formats could be read in, e.g., 9-bit integers.</li>
+                   </b></ul>
+                   <p><b>C allows us to do this in a structure definition by putting :bit length after the variable. For example </b></p>
+                   <p>struct packed_struct { <br>
+                    unsigned int f1:1; <br>
+                    unsigned int f2:1; <br>
+                    unsigned int f3:1; <br>
+                    unsigned int f4:1; <br>
+                    unsigned int type:4; <br>
+                    unsigned int my_int:9; <br>
+                 } pack;</p>
+                 <p><b>Here, the packed_struct contains 6 members: Four 1 bit flags f1..f3, a 4-bit type and a 9-bit my_int.
+
+                  C automatically packs the above bit fields as compactly as possible, provided that the maximum length of the field is less than <br>
+                   or equal to the integer word length of the computer. If this is not the case, then some compilers may allow memory overlap for <br>
+                    the  fields while others would store the next field in the next word.</b></p>
+
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+      
+    
+</body>
+</html>

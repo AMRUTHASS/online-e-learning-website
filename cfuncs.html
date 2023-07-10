@@ -1,0 +1,253 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Functions</title>
+    <style>
+                 :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 220px;height: auto;font-size: 35px;color: brown;">C - Functions</h1>   
+            </div>
+          </div>   
+        <p><b>A function is a group of statements that together perform a task. Every C program has at least one function, which is main(), and all the most trivial programs can define additional functions. <br>
+
+            You can divide up your code into separate functions. How you divide up your code among different functions is up to you, but logically the division is such that each function performs a specific task. <br>
+            
+            A function declaration tells the compiler about a function's name, return type, and parameters. A function definition provides the actual body of the function. <br>
+            
+            The C standard library provides numerous built-in functions that your program can call. For example, strcat() to concatenate two strings, memcpy() to copy one memory location to another location, <br>
+              and many more functions.
+            
+            A function can also be referred as a method or a sub-routine or a procedure, etc.
+            
+            
+             </b></p>
+        
+            <h2 style="background-color:  bisque;width: 210px;height: auto;color: brown;">Defining a Function</h2>
+            <p><b>The general form of a function definition in C programming language is as follows
+    </b></p>
+    <p>return_type function_name( parameter list ) { <br>
+        body of the function <br>
+     }</p>
+     <p><b>A function definition in C programming consists of a function header and a function body. Here are all the parts of a function-</b></p>
+     <ul>
+        <li>Return Type - A function may return a value. The return_type is the data type of the value the function returns. Some functions perform the desired operations without returning a value. In this case,<br>
+              the return_type is the keyword void.</li>
+        <li>Function Name - This is the actual name of the function. The function name and the parameter list together constitute the function signature.</li>
+        <li>Parameters - A parameter is like a placeholder. When a function is invoked, you pass a value to the parameter. This value is referred to as actual parameter or argument. The parameter list refers to the <br>
+             type, order, and number of the parameters of a function. Parameters are optional; that is, a function may contain no parameters.</li>
+        <li>Function Body - The function body contains a collection of statements that define what the function does.</li>
+     </ul>
+        
+            <h2 style="background-color:  bisque;width: 100px;height: auto;color: brown;">Example</h2>
+            <p><b>Given below is the source code for a function called max(). This function takes two parameters num1 and num2 and returns the maximum value between the two
+            </b></p>
+            <p>int max(int num1, int num2) { <br>
+
+                /* local variable declaration */ <br>
+                int result; <br>
+              
+                if (num1 > num2) <br>
+                   result = num1; <br>
+                else <br>
+                   result = num2; <br>
+              
+                return result;  <br>
+             }</p>
+          <h2 style="background-color:  bisque;width: 230px;height: auto;color: brown;">Function Declarations</h2>
+         <p><b>A function declaration tells the compiler about a function name and how to call the function. The actual body of the function can be defined separately. <br>A function declaration has the following parts</b></p>
+            <p>return_type function_name( parameter list );</p>
+            <p><b>For the above defined function max(), the function declaration is as follows</b></p>
+            <p>int max(int num1, int num2);</p>
+            <p><b>Parameter names are not important in function declaration only their type is required, so the following is also a valid declaration </b></p>
+            <p>int max(int, int);</p>
+            <p><b>Function declaration is required when you define a function in one source file and you call that function in another file. In such case, you should declare the function at the top of the file calling the function.</b></p>
+
+
+         <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">Calling a Function</h2>
+            <p><b>While creating a C function, you give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task.  When a program calls a function, the program <br>
+                 control is transferred to the called function. A called function performs a defined task and when its return statement is executed or when its function-ending closing brace is reached, it returns the program control <br>
+                  back to the main program.To call a function, you simply need to pass the required parameters along with the function name, and if the function returns a value, then you can store the returned value. For example
+
+            </b></p>
+            <p>#include <stdio.h> <br>
+ 
+                /* function declaration */ <br>
+                int max(int num1, int num2); <br>
+                 
+                int main () { <br>
+                
+                   /* local variable definition */ <br>
+                   int a = 100; <br>
+                   int b = 200; <br>
+                   int ret; <br>
+                 
+                   /* calling a function to get max value */ <br>
+                   ret = max(a, b); <br>
+                 
+                   printf( "Max value is : %d\n", ret ); <br>
+                 
+                   return 0; <br>
+                } <br>
+                 
+                /* function returning the max between two numbers */ <br>
+                int max(int num1, int num2) { <br>
+                
+                   /* local variable declaration */ <br>
+                   int result; <br>
+                 
+                   if (num1 > num2) <br>
+                      result = num1; <br>
+                   else <br>
+                      result = num2; <br>
+                 
+                   return result;  <br>
+                }</p>
+                <p><b>We have kept max() along with main() and compiled the source code. While running the final executable, it would produce the following result </b></p>
+                <p>Max value is : 200</p>
+                <h2 style="background-color:  bisque;width: 220px;height: auto;color: brown;">Function Arguments</h2>
+                <p><b>If a function is to use arguments, it must declare variables that accept the values of the arguments. These variables are called the formal parameters of the function. <br>
+
+                    Formal parameters behave like other local variables inside the function and are created upon entry into the function and destroyed upon exit. <br>
+                    
+                    While calling a function, there are two ways in which arguments can be passed to a function</b></p>
+                    <ol>
+                        <li>Call by value - This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter <br> 
+                        inside the function have no effect on the argument.</li>
+                        <li>Call by reference - This method copies the address of an argument into the formal parameter. Inside the function, the address is used to access the actual <br> 
+                            argument used in the call.This means that changes made to the parameter affect the argument.</li>
+                    </ol>
+                    <p><b>By default, C uses call by value to pass arguments. In general, it means the code within a function cannot alter the arguments used to call the function.</b></p>
+
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+    
+    
+    
+    
+</body>
+</html>

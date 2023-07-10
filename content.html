@@ -1,0 +1,406 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2{
+            color: rgba(191, 127, 255, 0.865);
+            width: 210px;
+        }
+        h4{
+            color: brown;
+            width: 250px;
+        }
+        p{
+            border:1px solid rgba(246, 191, 118, 0.461);
+            background-color: rgba(246, 191, 118, 0.466);
+            border-radius: 5px;
+            padding: 10px;
+            width:600px;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>Basic Programs</b></h3>
+        <!--for C-->
+        <h3>C programming</h3>
+        <h4>Program to print Hello Compiler</h4>
+        <p>#include<stdio.h> <br>
+            #include<conio.h> <br>
+            int main() <br>
+            { <br>
+                printf("Hello Compiler, I am C"); <br>
+                getch();        // holds the output screen until the user press a key <br>
+                return 0; <br>
+            }
+            </p>
+            <h3>Output:</h3>
+            <p>Hello Compiler, I am C</p>
+            <h4>Program to Print an Integer</h4>
+            <p>#include <stdio.h>
+                int main() {   <br>
+                    int number;<br>
+                   
+                    printf("Enter an integer: "); <br> 
+                    
+                    // reads and stores input<br>
+                    scanf("%d", &number);<br>
+                
+                    // displays output<br>
+                    printf("You entered: %d", number);<br>
+                    
+                    return 0;<br>
+                }</p>
+                
+                <h3>Output:</h3>
+                <p>Enter an integer: 25<br>
+                    You entered: 25</p>
+
+                <h4>Program to Add Two Integers</h4>
+                <p>
+                    #include <stdio.h><br>
+                        int main() {  <br>  
+                        
+                            int number1, number2, sum;<br>
+                            
+                            printf("Enter two integers: ");<br>
+                            scanf("%d %d", &number1, &number2);<br>
+                        
+                            // calculate the sum<br>
+                            sum = number1 + number2;      <br>
+                            
+                            printf("%d + %d = %d", number1, number2, sum);<br>
+                            return 0;<br>
+                        }
+                        
+                </p>
+                <h3>Output:</h3>
+                <p>
+                    Enter two integers: 12<br>
+                    11<br>
+                    12 + 11 = 23
+                </p>
+                <h4>Program to Multiply Two Numbers</h4>
+                <p>#include <stdio.h><br>
+                    int main() {<br>
+                        double a, b, product;<br>
+                        printf("Enter two numbers: ");<br>
+                        scanf("%lf %lf", &a, &b);  <br>
+                     
+                        // Calculating product<br>
+                        product = a * b;<br>
+                    
+                        // %.2lf displays number up to 2 decimal point<br>
+                        printf("Product = %.2lf", product);<br>
+                        
+                        return 0;<br>
+                    }
+                </p>    
+                <h3>Output:</h3>
+                <p>
+                    Enter two numbers: 2.4
+                    1.12
+                    Product = 2.69
+                    
+                </p>                
+                <h4>Program to Print ASCII Value</h4>
+                <p>#include <stdio.h><br>
+                    int main() {  <br>
+                        char c;<br>
+                        printf("Enter a character: ");<br>
+                        scanf("%c", &c);  <br>
+                        
+                        // %d displays the integer value of a character<br>
+                        // %c displays the actual character<br>
+                        printf("ASCII value of %c = %d", c, c);<br>
+                        
+                        return 0;<br>
+                    }
+                </p>          
+                <h3>Output:</h3>
+                <p>Enter a character: G<br>
+                    ASCII value of G = 71</p> 
+                <h4>Program to Compute Quotient and Remainder</h4>
+                <p> #include <stdio.h><br>
+                    int main() {<br>
+                        int dividend, divisor, quotient, remainder;<br>
+                        printf("Enter dividend: ");<br>
+                        scanf("%d", &dividend);<br>
+                        printf("Enter divisor: ");<br>
+                        scanf("%d", &divisor);<br>
+                    
+                        // Computes quotient<br>
+                        quotient = dividend / divisor;<br>
+                    
+                        // Computes remainder<br>
+                        remainder = dividend % divisor;<br>
+                    
+                        printf("Quotient = %d\n", quotient);<br>
+                        printf("Remainder = %d", remainder);<br>
+                        return 0;<br>
+                    }
+                </p>  
+                <h3>Output:</h3>
+                <p>
+                Enter dividend: 25<br>
+                Enter divisor: 4<br>
+                Quotient = 6<br>
+                Remainder = 1 
+            </p>      
+            <hr>                    
+            <!--for c++-->
+           
+                <h3>C++ programming</h3>\
+                <h4>Program to print Hello Compiler</h4>
+                <p>#include <iostream> <br>
+                    int main() {  <br>
+                    std::cout << "Hello Compiler, I am C++"; <br>
+                    return 0; <br>
+                } <br>
+                       
+                    </p>
+                    <h3>Output:</h3>
+                    <p>Hello Compiler, I am C++</p>
+                <h4>Print Number Entered by User</h4>
+                <p>#include <iostream><br>
+                    using namespace std;<br>
+                    
+                    int main() {    <br>
+                        int number;<br>
+                    
+                        cout << "Enter an integer: ";<br>
+                        cin >> number;<br>
+                    
+                        cout << "You entered " << number;   <br> 
+                        return 0;<br>
+                    }</p>
+                    <h3>Output:</h3>
+                    <p>Enter an integer: 23<br>
+                    You entered 23</p>
+                    
+                    <h4>Program to Add Two Integers</h4>
+                    <p>#include <iostream><br>
+                        using namespace std;<br>
+                        
+                        int main() {<br>
+                        
+                          int first_number, second_number, sum;<br>
+                            
+                          cout << "Enter two integers: ";<br>
+                          cin >> first_number >> second_number;<br>
+                        
+                          // sum of two numbers in stored in variable sumOfTwoNumbers<br>
+                          sum = first_number + second_number;<br>
+                        
+                          // prints sum <br>
+                          cout << first_number << " + " <<  second_number << " = " << sum; <br>    
+                        
+                          return 0;<br>
+                        }</p>
+                        <h3>Output:</h3>
+                        <p>Enter two integers: 4<br>
+                            5<br>
+                            4 + 5 = 9</p>
+                        <h4>Compute quotient and remainder</h4>
+                        <p>#include <iostream><br>
+                            using namespace std;<br>
+                            
+                            int main()<br>
+                            {    <br>
+                                int divisor, dividend, quotient, remainder;<br>
+                            
+                                cout << "Enter dividend: ";<br>
+                                cin >> dividend;<br>
+                            
+                                cout << "Enter divisor: ";<br>
+                                cin >> divisor;<br>
+                            
+                                quotient = dividend / divisor;<br>
+                                remainder = dividend % divisor;<br>
+                            
+                                cout << "Quotient = " << quotient << endl;<br>
+                                cout << "Remainder = " << remainder;<br>
+                            
+                                return 0;<br>
+                            }</p>
+                            <h3>Output:</h3>
+                            <p>Enter dividend: 13<br>
+                                Enter divisor: 4<br>
+                                Quotient = 3<br>
+                                Remainder = 1</p>
+                            <h4>Swap Numbers </h4>
+                            <p>#include <iostream>
+                                using namespace std;<br>
+                                
+                                int main()<br>
+                                {<br>
+                                    int a = 5, b = 10, temp;<br>
+                                
+                                    cout << "Before swapping." << endl;<br>
+                                    cout << "a = " << a << ", b = " << b << endl;<br>
+                                
+                                    temp = a;<br>
+                                    a = b;<br>
+                                    b = temp;<br>
+                                
+                                    cout << "\nAfter swapping." << endl;<br>
+                                    cout << "a = " << a << ", b = " << b << endl;<br>
+                                
+                                    return 0;<br>
+                                }</p>
+                                <h3>Output:</h3>
+                                <p>Before swapping.<br>
+                                    a = 5, b = 10<br>
+                                    
+                                    After swapping.<br>
+                                    a = 10, b = 5</p>
+
+                    <h4>Check Whether Number is Even or Odd</h4>
+                    <p>#include <iostream><br>
+                        using namespace std;<br>
+                        
+                        int main() {<br>
+                          int n;<br>
+                        
+                          cout << "Enter an integer: ";<br>
+                          cin >> n;<br>
+                        
+                          if ( n % 2 == 0)<br>
+                            cout << n << " is even.";<br>
+                          else<br>
+                            cout << n << " is odd.";<br>
+                        
+                          return 0;<br>
+                        }
+                        </p>
+                        <h3>Output:</h3>
+                        <p>Enter an integer: 23<br>
+                            23 is odd.</p>
+                        <hr>
+                    <!--for java-->
+                    <h3>Java programming</h3>
+                    <h4>Program to print Hello Compiler</h4>
+                    <p>
+                        class HelloWorld { <br>
+                            public static void main(String[] args) { <br>
+                            System.out.println("Hello Compiler, I am Java"); <br>
+                            } <br>
+                        }
+                    </p>
+                        <h3>Output:</h3>
+                        <p>Hello Compiler, I am Java</p>
+            
+                        <h4>Find Factorial of a number </h4>
+                        <p>public class Factorial {<br>
+
+                            public static void main(String[] args) {<br>
+                        
+                                int num = 10;<br>
+                                long factorial = 1;<br>
+                                for(int i = 1; i <= num; ++i)<br>
+                                {<br>
+                                    // factorial = factorial * i;<br>
+                                    factorial *= i;<br>
+                                }<br>
+                                System.out.printf("Factorial of %d = %d", num, factorial);<br>
+                            }<br>
+                        }</p>
+                        <h3>Output:</h3>
+                        <p>Factorial of 10 = 3628800</p>
+
+                        <h4>Display Fibonacci Series</h4>
+                        <p>class Main {<br>
+                            public static void main(String[] args) {<br>
+                          
+                              int n = 10, firstTerm = 0, secondTerm = 1;<br>
+                              System.out.println("Fibonacci Series till " + n + " terms:");<br>
+                          
+                              for (int i = 1; i <= n; ++i) {<br>
+                                System.out.print(firstTerm + ", ");<br>
+                          
+                                // compute the next term<br>
+                                int nextTerm = firstTerm + secondTerm;<br>
+                                firstTerm = secondTerm;<br>
+                                secondTerm = nextTerm;<br>
+                              }<br>
+                            }
+                        }</p>
+                        <h3>Output:</h3>
+                        <p>Fibonacci Series till 10 terms:<br>
+                        0, 1, 1, 2, 3, 5, 8, 13, 21, 34,</p>
+
+                        <h4>Reverse a Number</h4>
+                        <p>class Main {<br>
+                            public static void main(String[] args) {<br>
+                          
+                              int num = 1234, reversed = 0;<br>
+                              
+                              System.out.println("Original Number: " + num);<br>
+                          
+                              // run loop until num becomes 0<br>
+                              while(num != 0) {<br>
+                              
+                                // get last digit from num<br>
+                                int digit = num % 10;<br>
+                                reversed = reversed * 10 + digit;<br>
+                          
+                                // remove the last digit from num<br>
+                                num /= 10;<br>
+                              }<br>
+                          
+                              System.out.println("Reversed Number: " + reversed);<br>
+                            }<br>
+                          }</p>
+                          <h3>Output:</h3>
+                          <p>Reversed Number: 4321</p>
+
+                          <h4>Compute Quotient and Remainder</h4>
+                          <p>public class QuotientRemainder {<br>
+
+                            public static void main(String[] args) {<br>
+                          
+                              int dividend = 25, divisor = 4;<br>
+                          
+                              int quotient = dividend / divisor;<br>
+                              int remainder = dividend % divisor;<br>
+                          
+                              System.out.println("Quotient = " + quotient);<br>
+                              System.out.println("Remainder = " + remainder);<br>
+                            }
+                          }</p>
+                          <h3>Output:</h3>
+                          <p>Quotient = 6<br>
+                            Remainder = 1</p>
+
+                        <h4>Generate Multiplication Table</h4>
+                        <p>public class MultiplicationTable {<br>
+
+                            public static void main(String[] args) {<br>
+                        
+                                int num = 5;<br>
+                                for(int i = 1; i <= 10; ++i)<br>
+                                {<br>
+                                    System.out.printf("%d * %d = %d \n", num, i, num * i);<br>
+                                }<br>
+                            }<br>
+                        }</p>
+                        <h3>Output:</h3>
+                        <p>5 * 1 = 5<br>
+                            5 * 2 = 10<br>
+                            5 * 3 = 15<br>
+                            5 * 4 = 20<br>
+                            5 * 5 = 25<br>
+                            5 * 6 = 30<br>
+                            5 * 7 = 35<br>
+                            5 * 8 = 40<br>
+                            5 * 9 = 45<br>
+                            5 * 10 = 50</p>
+    
+
+</body>
+</html>

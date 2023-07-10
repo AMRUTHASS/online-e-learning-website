@@ -1,0 +1,280 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="C/cbasic">C-basic syntax</a>
+            <a href="cdata">C-datatypes</a>
+            <a href="cvarcons">C-variables and constants</a>
+            <a href="coper">C-operators</a>
+            <a href="cdec">C-decision making</a>
+            <a href="cloops">C-loops</a>
+            <a href="cfuncs">C-functions</a>
+            <a href="carrays">C-arrays</a>
+            <a href="cpointers">C-pointers</a>
+            <a href="cstrings">C-strings</a>
+            <a href="cstruct">C-structures</a>
+            <a href="cunions">C-unions</a>
+            <a href="ciotype">C-input and output type</a>
+            <a href="crecursion">C-recursion</a>
+            <a href="chf">C-headerfiles</a>
+            <a href="cprepro">C-preproccessor</a>
+            <a href="ctypecas">C-typecasting</a>
+            <a href="cerrhandling">C-errorhandling</a>
+          </div>
+          
+        
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        
+              
+              <div id="main">
+              
+              <div class="LE-teal">
+                
+                <div class="LE-container">
+                  <h1 style="background-color: lightcoral;width: 250px;height: auto;font-size: 35px;color: brown;">C-Preprocessor</h1>   
+                </div>
+              </div>   
+            <p><b>The C Preprocessor is not a part of the compiler, but is a separate step in the compilation process. In simple terms, a C Preprocessor is just a text substitution tool and it instructs the compiler to do <br>
+                 required pre-processing before the actual compilation. We'll refer to the C Preprocessor as CPP.All preprocessor commands begin with a hash symbol (#). It must be the first nonblank character, and for <br>
+                  readability, a preprocessor directive should begin in the first column. The following section lists down all the important preprocessor directives  </b></p>
+                  <ol>
+                    <li>#define - Substitutes a preprocessor macro.</li>
+                    <li>#include - Inserts a particular header from another file.</li>
+                    <li>#undef - Undefines a preprocessor macro.</li>
+                    <li>#ifdef - Returns true if this macro is defined.</li>
+                    <li>#ifndef - Returns true if this macro is not defined.</li>
+                    <li>#if - Tests if a compile time condition is true.</li>
+                    <li>#else - The alternative for #if.</li>
+                    <li>#elif - #else and #if in one statement.</li>
+                    <li>#endif - Ends preprocessor conditional.</li>
+                    <li>#error - Prints error message on stderr.</li>
+                    <li>#pragma - Issues special commands to the compiler, using a standardized method.</li>  
+                </ol>
+                <h2 style="background-color:  bisque;width: 250px;height: auto;color: brown;">Preprocessors Examples</h2>
+                <p><b>IAnalyze the following examples to understand various directives.
+                 </b></p>
+                 <p>#define MAX_ARRAY_LENGTH 20</p>
+                 <p><b>This directive tells the CPP to replace instances of MAX_ARRAY_LENGTH with 20. Use #define for constants to increase readability.</b></p>
+                 <p>#include <stdio.h> <br>
+                    #include "myheader.h"</p>
+                    <p><b>These directives tell the CPP to get stdio.h from System Libraries and add the text to the current source file. The next line tells CPP to get myheader.h from the local directory and add the <br>
+                         content to the current source file.</b></p>
+                         <p>#undef  FILE_SIZE <br>
+                            #define FILE_SIZE 42</p>
+                            <p>It tells the CPP to undefine existing FILE_SIZE and define it as 42.</p>
+                            <p><b>#ifndef MESSAGE <br>
+                                #define MESSAGE "You wish!" <br>
+                             #endif</b></p>
+                             <p><b> It tells the CPP to define MESSAGE only if MESSAGE isn't already defined.</b></p>
+                             <p>#ifdef DEBUG <br>
+                                /* Your debugging statements here */ <br>
+                             #endif</p>
+                             <p><b>It tells the CPP to process the statements enclosed if DEBUG is defined. This is useful if you pass the -DDEBUG flag to the gcc compiler at the time of compilation. This will define DEBUG,<br>
+                                 so you can turn debugging on and off on the fly during compilation.</b></p>
+
+            
+                <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">Predefined Macros</h2>
+                <p><b>ANSI C defines a number of macros. Although each one is available for use in programming, the predefined macros should not be directly modified.
+        </b></p>
+        <ol><li>__DATE__ - The current date as a character literal in "MMM DD YYYY" format.</li>
+            <li>__TIME__ - The current time as a character literal in "HH:MM:SS" format.</li>
+            <li>__FILE__ - This contains the current filename as a string literal.</li>
+            <li>__LINE__ - This contains the current line number as a decimal constant.</li>
+            <li>__STDC__ - Defined as 1 when the compiler complies with the ANSI standard.</li>
+        </ol>
+        <p><b>Let's try the following example</b></p>
+        <p>#include <stdio.h> <br>
+
+            int main() { <br>
+            
+               printf("File :%s\n", __FILE__ ); <br>
+               printf("Date :%s\n", __DATE__ ); <br>
+               printf("Time :%s\n", __TIME__ ); <br>
+               printf("Line :%d\n", __LINE__ ); <br>
+               printf("ANSI :%d\n", __STDC__ ); <br>
+            
+            }</p>
+            <p><b>When the above code in a file test.c is compiled and executed, it produces the following result</b></p>
+            <p>File :test.c <br>
+                Date :Jun 2 2012 <br>
+                Time :03:36:24 <br>
+                Line :8 <br>
+                ANSI :1</p>
+            
+                <h2 style="background-color:  bisque;width: 250px;height: auto;color: brown;">Preprocessor Operators</h2>
+                <p><b>The C preprocessor offers the following operators to help create macros 
+                </b></p>
+                <h3>The Macro Continuation (\) Operator</h3>
+                <p><b>A macro is normally confined to a single line. The macro continuation operator (\) is used to continue a macro that is too long for a single line.<br>
+                For example</b></p>
+                <p>#define  message_for(a, b)  \ <br>
+                    printf(#a " and " #b ": We love you!\n")</p>
+                    <h3>The Stringize (#) Operator</h3>
+                    <p><b>The stringize or number-sign operator ( '#' ), when used within a macro definition, converts a macro parameter into a string constant. This operator may be used only in a macro having a specified argument or <br>
+                         parameter list. For example</b></p>
+                         <p>#include <stdio.h> <br>
+
+                            #define  message_for(a, b)  \ <br>
+                               printf(#a " and " #b ": We love you!\n") <br>
+                            
+                            int main(void) { <br>
+                               message_for(Carole, Debra); <br>
+                               return 0; <br>
+                            }</p>
+                            <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                            <p>Carole and Debra: We love you!</p>
+                            <h3>The Token Pasting (##) Operator</h3>
+                            <p><b>The token-pasting operator (##) within a macro definition combines two arguments. It permits two separate tokens in the macro definition to be joined into a single token. For example</b></p>
+                            <p>#include <stdio.h> <br>
+
+                                #define tokenpaster(n) printf ("token" #n " = %d", token##n) <br>
+                                
+                                int main(void) { <br>
+                                   int token34 = 40; <br>
+                                   tokenpaster(34); <br>
+                                   return 0; <br>
+                                }</p>
+                                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                                <p>token34 = 40</p>
+                                <p><b>It happened so because this example results in the following actual output from the preprocessor</b></p>
+                                <p>printf ("token34 = %d", token34);</p>
+                                <p><b>This example shows the concatenation of token##n into token34 and here we have used both stringize and token-pasting</b></p>
+                                <h3>The Defined() Operator</h3>
+                                <p><b>The preprocessor defined operator is used in constant expressions to determine if an identifier is defined using #define. If the specified identifier is defined, the value is true (non-zero). If the <br>
+                                     symbol is not defined, the value is false (zero). The defined operator is specified as follows</b></p>
+                                     <p>#include <stdio.h> <br>
+
+                                        #if !defined (MESSAGE) <br>
+                                           #define MESSAGE "You wish!" <br>
+                                        #endif <br>
+                                        
+                                        int main(void) { <br>
+                                           printf("Here is the message: %s\n", MESSAGE); <br>  
+                                           return 0; <br>
+                                        }</p>
+                                        <p><b> When the above code is compiled and executed, it produces the following result</b></p>
+                                        <p>Here is the message: You wish!</p>
+              <h2 style="background-color:  bisque;width: 240px;height: auto;color: brown;">Parameterized Macros</h2>
+             <p><b>One of the powerful functions of the CPP is the ability to simulate functions using parameterized macros. For example, we might have some code to square a number as follows</b></p>
+             <p>int square(int x) { <br>
+                return x * x; <br>
+             }</p>
+             <p><b>We can rewrite above the code using a macro as follows</b></p>
+             <p>#define square(x) ((x) * (x))</p>
+             <p><b>Macros with arguments must be defined using the #define directive before they can be used. The argument list is enclosed in parentheses and must immediately follow the macro name. Spaces are not allowed between the <br>
+                 macro name and open parenthesis. For example</b></p>
+                 <p>#include <stdio.h> <br>
+
+                    #define MAX(x,y) ((x) > (y) ? (x) : (y)) <br>
+                    
+                    int main(void) { <br>
+                       printf("Max between 20 and 10 is %d\n", MAX(10, 20)); <br>  
+                       return 0; <br>
+                    }</p>
+                    <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                    <p>Max between 20 and 10 is 20</p>
+        
+              <div class="LE-container">
+            </div>
+            
+            </div>
+            
+            <script>
+              function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+              }
+              
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+              }
+              </script>
+    
+</body>
+</html>

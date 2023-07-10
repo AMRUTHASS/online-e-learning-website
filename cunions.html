@@ -1,0 +1,254 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-unions</title>
+    <style>
+                 :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+     
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 160px;height: auto;font-size: 35px;color: brown;">C-Unions</h1>   
+            </div>
+          </div>  
+        <p><b>A union is a special data type available in C that allows to store different data types in the same memory location. You can define a union with many members, <br>
+             but only one member can contain a value at any given time. Unions provide an efficient way of using the same memory location for multiple-purpose.
+
+
+             </b></p>
+        
+            <h2 style="background-color:  bisque;width: 180px;height: auto;color: brown;">Defining a Union</h2>
+            <p><b>To define a union, you must use the union statement in the same way as you did while defining a structure. The union statement defines a new data type with more <br>
+                 than one member for your program. The format of the union statement is as follows
+    </b></p>
+    <p>union [union tag] { <br>
+        member definition; <br>
+        member definition; <br>
+        ... <br>
+        member definition; <br>
+     } [one or more union variables];  </p>
+     <p><b>The union tag is optional and each member definition is a normal variable definition, such as int i; or float f; or any other valid variable definition. At the end of the <br>
+         union's definition, before the final semicolon, you can specify one or more union variables but it is optional. Here is the way you would define a union type named Data <br>
+          having three members i, f, and str</b></p>
+          <p>union Data { <br>
+            int i; <br>
+            float f; <br>
+            char str[20]; <br>
+         } data;  </p>
+         <p><b>Now, a variable of Data type can store an integer, a floating-point number, or a string of characters. It means a single variable, i.e., same memory location, can be <br>
+             used to store multiple types of data. You can use any built-in or user defined data types inside a union based on your requirement.The memory occupied by a union will be <br>
+              large enough to hold the largest member of the union. For example, in the above example, Data type will occupy 20 bytes of memory space because this is the maximum space <br>
+               which can be occupied by a character string. The following example displays the total memory size occupied by the above union</b></p>
+               <p>#include <stdio.h> <br>
+                #include <string.h> <br>
+                  
+                union Data { <br>
+                   int i; <br>
+                   float f; <br>
+                   char str[20]; <br>
+                }; <br>
+                  int main( ) { <br>
+                
+                   union Data data; <br>       
+                
+                   printf( "Memory size occupied by data : %d\n", sizeof(data)); <br>
+                
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                <p>Memory size occupied by data : 20</p>
+        
+            <h2 style="background-color:  bisque;width: 280px;height: auto;color: brown;">Accessing Union Members</h2>
+            <p><b>To access any member of a union, we use the member access operator (.). The member access operator is coded as a period between the union variable name and the union <br>
+                 member that we wish to access. You would use the keyword union to define variables of union type. The following example shows how to use unions in a program
+            </b></p>
+            <p>#include <stdio.h> <br>
+                #include <string.h> <br>
+                 
+                union Data { <br>
+                   int i; <br>
+                   float f; <br>
+                   char str[20]; <br>
+                }; <br>
+                 
+                int main( ) { <br>
+                
+                   union Data data; <br>        
+                 
+                   data.i = 10; <br>
+                   data.f = 220.5; <br>
+                   strcpy( data.str, "C Programming"); <br>
+                
+                   printf( "data.i : %d\n", data.i); <br>
+                   printf( "data.f : %f\n", data.f); <br>
+                   printf( "data.str : %s\n", data.str); <br>
+                
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                <p>data.i : 1917853763 <br>
+                    data.f : 4122360580327794860452759994368.000000 <br>
+                    data.str : C Programming</p>
+                    <p><b>Here, we can see that the values of i and f members of union got corrupted because the final value assigned to the variable has occupied the memory location and <br>
+                         this is the reason that the value of str member is getting printed very well.Now let's look into the same example once again where we will use one variable at a <br>
+                          time which is the main purpose of having unions </b></p>
+                          <p>#include <stdio.h> <br>
+                            #include <string.h> <br>
+                             
+                            union Data { <br>
+                               int i; <br>
+                               float f; <br>
+                               char str[20]; <br>
+                            }; <br>
+                             
+                            int main( ) { <br>
+                            
+                               union Data data; <br>        
+                            
+                               data.i = 10; <br>
+                               printf( "data.i : %d\n", data.i); <br>
+                               
+                               data.f = 220.5; <br>
+                               printf( "data.f : %f\n", data.f); <br>
+                               
+                               strcpy( data.str, "C Programming"); <br>
+                               printf( "data.str : %s\n", data.str); <br>
+                            
+                               return 0; <br>
+                            }
+                            </p>
+                            <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                            <p>data.i : 10 <br>
+                                data.f : 220.500000 <br>
+                                data.str : C Programming</p>
+                                <p><b>Here, all the members are getting printed very well because one member is being used at a time.</b></p>
+
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+      
+    
+</body>
+</html>

@@ -1,0 +1,272 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Overriding</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+    
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 300px;height: auto;font-size: 35px;color: brown;">Java-Overrididing</h1>   
+            </div>
+          </div>  
+          <p>In the previous chapter, we talked about superclasses and subclasses. If a class inherits a method from its superclass, then there is a chance to override the method provided that it is not marked final.
+            <br>
+            The benefit of overriding is: ability to define a behavior that's specific to the subclass type, which means a subclass can implement a parent class method based on its requirement.
+            <br>
+            In object-oriented terms, overriding means to override the functionality of an existing method.</p> 
+            <p><b>Example</b></p>
+            <p>Let us look at an example.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                class Animal {<br>
+                    public void move() {<br>
+                       System.out.println("Animals can move");<br>
+                    }<br>
+                }<br>
+                 
+                 class Dog extends Animal {<br>
+                    public void move() {<br>
+                       System.out.println("Dogs can walk and run");<br>
+                    }<br>
+                 }<br>
+                 
+                 public class TestDog {<br>
+                 
+                    public static void main(String args[]) {<br>
+                       Animal a = new Animal();   // Animal reference and object<br>
+                       Animal b = new Dog();   // Animal reference but Dog object<br>
+                 
+                       a.move();   // runs the method in Animal class<br>
+                       b.move();   // runs the method in Dog class<br>
+                    }<br>
+                 }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Animals can move<br>
+                Dogs can walk and run
+            </p>
+            <p>In the above example, you can see that even though b is a type of Animal it runs the move method in the Dog class. The reason for this is: In compile time, the check is made on the reference type. However, in the runtime, JVM figures out the object type and would run the method that belongs to that particular object.
+                <br>
+                Therefore, in the above example, the program will compile properly since Animal class has the method move. Then, at the runtime, it runs the method specific for that object.
+                <br>
+                Consider the following example −</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                class Animal {<br>
+                    public void move() {<br>
+                       System.out.println("Animals can move");<br>
+                    }<br>
+                }<br>
+                 
+                 class Dog extends Animal {<br>
+                    public void move() {<br>
+                       System.out.println("Dogs can walk and run");<br>
+                    }<br>
+                    public void bark() {<br>
+                       System.out.println("Dogs can bark");<br>
+                    }<br>
+                 }<br>
+                 
+                 public class TestDog {<br>
+                 
+                    public static void main(String args[]) {<br>
+                       Animal a = new Animal();   // Animal reference and object<br>
+                       Animal b = new Dog();   // Animal reference but Dog object<br>
+                 
+                       a.move();   // runs the method in Animal class<br>
+                       b.move();   // runs the method in Dog class<br>
+                       b.bark();<br>
+                    }<br>
+                 }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                TestDog.java:26: error: cannot find symbol<br>
+                b.bark();<br>
+                 ^<br>
+               symbol:   method bark()<br>
+               location: variable b of type Animal<br>
+               1 error
+            </p>
+            <p>This program will throw a compile time error since b's reference type Animal doesn't have a method by the name of bark.</p>
+            <h2 style="background-color:  bisque;width: 335px;height: auto;color: brown;">Rules for Method Overriding</h2>
+            <ul>
+                <li>The argument list should be exactly the same as that of the overridden method.</li>
+                <li>The return type should be the same or a subtype of the return type declared in the original overridden method in the superclass.</li>
+                <li>The access level cannot be more restrictive than the overridden method's access level. For example: If the superclass method is declared public then the overridding method in the sub class cannot be either private or protected.</li>
+                <li>Instance methods can be overridden only if they are inherited by the subclass.</li><br>
+                <li>A method declared final cannot be overridden.</li><br>
+                <li>A method declared static cannot be overridden but can be re-declared.</li><br>
+                <li>If a method cannot be inherited, then it cannot be overridden.</li><br>
+                <li>A subclass within the same package as the instance's superclass can override any superclass method that is not declared private or final.</li><br>
+                <li>Constructors cannot be overridden.</li>
+                </ul>
+                <h2 style="background-color:  bisque;width: 285px;height: auto;color: brown;">Using the super Keyword</h2>
+                <p>When invoking a superclass version of an overridden method the super keyword is used.</p>
+             <p><b>Example</b></p>
+             <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                class Animal {<br>
+                    public void move() {<br>
+                       System.out.println("Animals can move");<br>
+                    }<br>
+                }<br>
+                 
+                 class Dog extends Animal {<br>
+                    public void move() {<br>
+                       super.move();   // invokes the super class method<br>
+                       System.out.println("Dogs can walk and run");<br>
+                    }<br>
+                 }<br>
+                 
+                 public class TestDog {<br>
+                 
+                    public static void main(String args[]) {<br>
+                       Animal b = new Dog();   // Animal reference but Dog object<br>
+                       b.move();   // runs the method in Dog class<br>
+                    }<br>
+                 }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Animals can move<br>
+                Dogs can walk and run
+            </p>
+            </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

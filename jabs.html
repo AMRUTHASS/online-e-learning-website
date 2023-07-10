@@ -1,0 +1,318 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Abstraction</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 280px;height: auto;font-size: 35px;color: brown;">Java-Abstraction</h1>   
+            </div>
+          </div>  
+          <p>As per dictionary, abstraction is the quality of dealing with ideas rather than events. For example, when you consider the case of e-mail, complex details such as what happens as soon as you send an e-mail, the protocol your e-mail server uses are hidden from the user. Therefore, to send an e-mail you just need to type the content, mention the address of the receiver, and click send.
+          <br>
+          Likewise in Object-oriented programming, abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In other words, the user will have the information on what the object does instead of how it does it.
+          <br>
+          In Java, abstraction is achieved using Abstract classes and interfaces.</p> 
+          <h2 style="background-color:  bisque;width: 165px;height: auto;color: brown;">Abstract Class</h2>
+          <p>A class which contains the abstract keyword in its declaration is known as abstract class.</p>
+            <ul>
+                <li>Abstract classes may or may not contain abstract methods, i.e., methods without body ( public void get(); )</li><br>
+                <li>But, if a class has at least one abstract method, then the class must be declared abstract.</li><br>
+                <li>If a class is declared abstract, it cannot be instantiated.</li>
+                <li>To use an abstract class, you have to inherit it from another class, provide implementations to the abstract methods in it.</li><br>
+                <li>If you inherit an abstract class, you have to provide implementations to all the abstract methods in it.</li><br>
+          <p>Let us look at an example.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                public interface Vegetarian{}<br>
+                public class Animal{}<br>
+                public class Deer extends Animal implements Vegetarian{}
+            </p>
+            <p><b>Example</b></p>
+            <p>This section provides you an example of the abstract class. To create an <b>abstract</b> class, just use the abstract keyword before the class keyword, in the class declaration.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                /* File name : Employee.java */<br>
+                public abstract class Employee {<br>
+                   private String name;<br>
+                   private String address;<br>
+                   private int number;<br>
+                
+                   public Employee(String name, String address, int number) {<br>
+                      System.out.println("Constructing an Employee");<br>
+                      this.name = name;<br>
+                      this.address = address;<br>
+                      this.number = number;<br>
+                   }<br>
+                   
+                   public double computePay() {<br>
+                     System.out.println("Inside Employee computePay");<br>
+                     return 0.0;<br>
+                   }<br>
+                   
+                   public void mailCheck() {<br>
+                      System.out.println("Mailing a check to " + this.name + " " + this.address);<br>
+                   }<br>
+                
+                   public String toString() {<br>
+                      return name + " " + address + " " + number;<br>
+                   }<br>
+                
+                   public String getName() {<br>
+                      return name;<br>
+                   }<br>
+                 
+                   public String getAddress() {<br>
+                      return address;<br>
+                   }<br>
+                   
+                   public void setAddress(String newAddress) {<br>
+                      address = newAddress;<br>
+                   }<br>
+                 
+                   public int getNumber() {<br>
+                      return number;<br>
+                   }<br>
+                }
+            </p>
+            <p>You can observe that except abstract methods the Employee class is same as normal class in Java. The class is now abstract, but it still has three fields, seven methods, and one constructor.
+                <br>
+                Now you can try to instantiate the Employee class in the following way −</p>
+                <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                    /* File name : AbstractDemo.java */<br>
+                    public class AbstractDemo {<br>
+
+                    public static void main(String [] args) {<br>
+                    /* Following is not allowed and would raise error */<br>
+                    Employee e = new Employee("George W.", "Houston, TX", 43);<br>
+                    System.out.println("\n Call mailCheck using Employee reference--");<br>
+                    e.mailCheck();<br>
+                    }<br>
+                }
+            </p>
+            <p>When you compile the above class, it gives you the following error −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                Employee.java:46: Employee is abstract; cannot be instantiated<br>
+                Employee e = new Employee("George W.", "Houston, TX", 43);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              ^   <br>
+                1 error<br>
+            </p>
+                <h2 style="background-color:  bisque;width: 325px;height: auto;color: brown;">Inheriting the Abstract Class</h2>
+            <p>We can inherit the properties of Employee class just like concrete class in the following way −</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                /* File name : Salary.java */<br>
+                public class Salary extends Employee {<br>
+                private double salary;   // Annual salary<br>
+   
+                public Salary(String name, String address, int number, double salary) {<br>
+                super(name, address, number);<br>
+                setSalary(salary);<br>
+                }<br>
+   
+                public void mailCheck() {<br>
+                System.out.println("Within mailCheck of Salary class ");<br>
+                System.out.println("Mailing check to " + getName() + " with salary " + salary);<br>
+                }<br>
+ 
+                public double getSalary() {<br>
+                return salary;<br>
+                }<br>
+   
+                public void setSalary(double newSalary) {<br>
+                if(newSalary >= 0.0) {<br>
+                salary = newSalary;<br>
+                }<br>
+            }<br>
+   
+                public double computePay() {<br>
+                System.out.println("Computing salary pay for " + getName());<br>
+                return salary/52;<br>
+                }<br>
+            }
+            </p>
+            <p>Here, you cannot instantiate the Employee class, but you can instantiate the Salary Class, and using this instance you can access all the three fields and seven methods of Employee class as shown below.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                /* File name : AbstractDemo.java */<br>
+                public class AbstractDemo {<br>
+
+                public static void main(String [] args) {<br>
+                Salary s = new Salary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);<br>
+                Employee e = new Salary("John Adams", "Boston, MA", 2, 2400.00);<br>
+                System.out.println("Call mailCheck using Salary reference --");<br>
+                s.mailCheck();<br>
+                System.out.println("\n Call mailCheck using Employee reference--");<br>
+                e.mailCheck();<br>
+                }<br>
+            }
+            </p>
+            <p>This produces the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                Constructing an Employee<br>
+                Constructing an Employee<br>
+                Call mailCheck using Salary reference --<br>
+                Within mailCheck of Salary class<br> 
+                Mailing check to Mohd Mohtashim with salary 3600.0<br>
+
+                Call mailCheck using Employee reference--<br>
+                Within mailCheck of Salary class<br> 
+                Mailing check to John Adams with salary 2400.0
+            </p>
+            <h2 style="background-color:  bisque;width: 215px;height: auto;color: brown;">Abstract Methods</h2>
+            <p>If you want a class to contain a particular method but you want the actual implementation of that method to be determined by child classes, you can declare the method in the parent class as an abstract.</p>
+            <ul>
+                <li>abstract keyword is used to declare the method as abstract.</li><br>
+                <li>You have to place the abstract keyword before the method name in the method declaration.</li><br>
+                <li>An abstract method contains a method signature, but no method body.</li><br>
+                <li>Instead of curly braces, an abstract method will have a semoi colon (;) at the end.</li>
+            </ul>
+            <p>Following is an example of the abstract method.</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 450px; padding:10px; border-radius: 5px;" >
+                public abstract class Employee {<br>
+                    private String name;<br>
+                    private String address;<br>
+                    private int number;<br>
+                    
+                    public abstract double computePay();<br>
+                    // Remainder of class definition<br>
+                 }
+            </p>
+            <p>Declaring a method as abstract has two consequences −</p>
+            <ul>
+                <li>The class containing it must be declared as abstract.</li><br>
+                <li>Any class inheriting the current class must either override the abstract method or declare itself as abstract.</li>
+            </ul>
+            </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

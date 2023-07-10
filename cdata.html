@@ -1,0 +1,197 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-datatypes</title>
+    <style>
+                 :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+  
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 200px;height: auto;font-size: 35px;color: brown;">C-datatypes</h1>   
+            </div>
+          </div>   
+        
+        <p><b>Data types in c refer to an extensive system used for declaring variables or functions of different types. The type of a variable determines how much space it occupies in storage <br>
+             and how the bit pattern stored is interpreted.<br> 
+            </b></p>
+            <ol>
+                <li><b>Basic Types - </b> 
+They are arithmetic types and are further classified into: (a) integer types and (b) floating-point types.</li>
+                <li><b>Enumerated types - </b>
+                    They are again arithmetic types and they are used to define variables that can only assign certain discrete integer values throughout the program.</li>
+                <li><b>The type void - </b>
+                    The type specifier void indicates that no value is available.</li>
+                    <li><b>Derived types - </b>
+                        They include (a) Pointer types, (b) Array types, (c) Structure types, (d) Union types and (e) Function types</li>
+            </ol>
+            <p><b>The array types and structure types are referred collectively as the aggregate types. The type of a function specifies the type of the function's return value. We will see the basic types in the following section,<br>
+                 where as other types will be covered in the upcoming chapters.</b></p>
+            <h2 style="background-color:  bisque;width: 150px;height: auto;color: brown;">Integer Types</h2>
+            <p><b>The following table provides the details of standard integer types with their storage sizes and value ranges<br>
+    </b></p>
+    <ul>
+        <li>char - 1 byte - [-128 to 127 or 0 to 255]</li>
+        <li>unsigned char - 1 byte - [0 to 255]</li> 
+        <li>signed char -	1 byte - [-128 to 127]</li>
+        <li>int - 2 or 4 bytes -[-32,768 to 32,767 or -2,147,483,648 to 2,147,483,647]</li>
+        <li>unsigned int - 2 or 4 bytes -[0 to 65,535 or 0 to 4,294,967,295]</li>
+        <li>short - 2 bytes -[-32,768 to 32,767]</li> 
+        <li>unsigned short - 2 bytes -[0 to 65,535]</li>
+        <li>long - 8 bytes or (4bytes for 32 bit OS) -[-9223372036854775808 to 9223372036854775807]</li>
+        <li>unsigned long - 8 bytes -[0 to 18446744073709551615]</li> 
+    </ul>
+    <p><b>To get the exact size of a type or a variable on a particular platform, you can use the sizeof operator. <br>
+       The expressions sizeof(type) yields the storage size of the object or type in bytes.</b></p>
+        
+            <h2 style="background-color:  bisque;width: 150px;height: auto;color: brown;">The voidtype</h2>
+            <p><b>The void type specifies that no value is available. It is used in three kinds of situations <br>
+    </b></p>
+    <ol> <b>
+     <li> Function returns as void - There are various functions in C which do not return any value or you can say <br> they return void.
+         A function with no return value has the return type as void. For example, void exit (int status);</li>
+         <li>Function arguments as void - There are various functions in C which do not accept any parameter. <br>
+           A function with no parameter can accept a void. For example, int rand(void);</li> 
+         <li>Pointers to void - A pointer of type void * represents the address of an object, but not its type. For example, <br> a memory allocation function void *malloc( size_t size );
+           returns a pointer to void which can be casted to any data type.</li> 
+    </b></ol>
+        
+            <h2 style="background-color:  bisque;width: 220px;height: auto;color: brown;">Floating-point types</h2>
+            <p><b>The following table provide the details of standard floating-point types with storage sizes and value ranges and their precision 
+</b></p>
+<ul>
+  <li>float - 4 byte - [1.2E-38 to 3.4E+38]	 - 6 decimal places</li>
+  <li>double - 8 byte - [2.3E-308 to 1.7E+308] - 15 decimal places</li>
+  <li>long double - 10 byte - [3.4E-4932 to 1.1E+4932] - 19 decimal places</li>
+</ul>
+<p><b>The header file float.h defines macros that allow you to use these values 
+   and other details about the binary representation of real numbers in your programs. </b></p>
+
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        
+</body>
+</html>

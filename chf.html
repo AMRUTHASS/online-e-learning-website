@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-HeaderFiles</title>
+    <style>
+              :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 230px;height: auto;font-size: 35px;color: brown;">C-Header Files</h1>   
+            </div>
+          </div>   
+      
+        <p><b>A header file is a file with extension .h which contains C function declarations and macro definitions to be shared between several source files. There are two types of header files: the <br>
+             files that the programmer writes and the files that comes with your compiler.You request to use a header file in your program by including it with the C preprocessing directive #include, <br>
+              like you have seen inclusion of stdio.h header file, which comes along with your compiler.Including a header file is equal to copying the content of the header file but we do not do it <br> 
+              because it will be error-prone and it is not a good idea to copy the content of a header file in the source files, especially if we have multiple source files in a program.A simple <br>
+               practice in C or C++ programs is that we keep all the constants, macros, system wide global variables, and function prototypes in the header files and include that header file <br>
+                wherever it is required.
+
+            </b></p>
+            <h2 style="background-color:  bisque;width: 160px;height: auto;color: brown;">Include Syntax</h2>
+            <p><b>Both the user and the system header files are included using the preprocessing directive #include. It has the following two forms
+             </b></p>
+             <p>#include <file></p>
+                <p><b>This form is used for system header files. It searches for a file named 'file' in a standard list of system directories. You can prepend directories to this list with the -I option <br>
+                     while compiling your source code.</b></p>
+                     <p>#include "file"</p>
+                     <p><b>This form is used for header files of your own program. It searches for a file named 'file' in the directory containing the current file. You can prepend directories to this list with the -I <br>
+                         option while compiling your source code.</b></p>
+        
+            <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">Include Operation</h2>
+            <p><b>The #include directive works by directing the C preprocessor to scan the specified file as input before continuing with the rest of the current source file. The output from the <br>
+                 preprocessor contains the output already generated, followed by the output resulting from the included file, followed by the output that comes from the text after the #include <br>
+                  directive. For example, if you have a header file header.h as follows
+    </b></p>
+    <p>char *test (void);</p>
+    <p><b>and a main program called program.c that uses the header file, like this</b></p>
+    <p>int x; <br>
+        #include "header.h" <br>
+        
+        int main (void) { <br>
+           puts (test ()); <br>
+        }</p>
+        <p><b>the compiler will see the same token stream as it would if program.c read.</b></p>
+        <p>int x; <br>
+            char *test (void); <br>
+            
+            int main (void) { <br>
+               puts (test ()); <br>
+            }</p>
+        
+            <h2 style="background-color:  bisque;width: 210px;height: auto;color: brown;">Once-Only Headers</h2>
+            <p><b>If a header file happens to be included twice, the compiler will process its contents twice and it will result in an error. The standard way to prevent this is to enclose the entire real contents <br>
+                 of the file in a conditional, like this 
+            </b></p>
+            <p>#ifndef HEADER_FILE <br>
+                #define HEADER_FILE <br>
+                
+                the entire header file file <br>
+                
+                #endif</p>
+                <p><b>This construct is commonly known as a wrapper #ifndef. When the header is included again, the conditional will be false, because HEADER_FILE is defined. The preprocessor will skip over the entire <br>
+                     contents of the file, and the compiler will not see it twice.</b></p>
+          <h2 style="background-color:  bisque;width: 210px;height: auto;color: brown;">Computed Includes</h2>
+         <p><b>Sometimes it is necessary to select one of the several different header files to be included into your program. For instance, they might specify configuration parameters to be used on different sorts of <br>
+             operating systems. You could do this with a series of conditionals as follows</b></p>
+             <p>#if SYSTEM_1 <br>
+                # include "system_1.h" <br>
+             #elif SYSTEM_2 <br>
+                # include "system_2.h" <br>
+             #elif SYSTEM_3 <br>
+                ... <br>
+             #endif</p>
+             <p><b>But as it grows, it becomes tedious, instead the preprocessor offers the ability to use a macro for the header name. This is called a computed include. Instead of writing a header name as the direct <br>
+                 argument of #include, you simply put a macro name there</b></p>
+                 <p>#define SYSTEM_H "system_1.h" <br>
+                    ... <br>
+                    #include SYSTEM_H</p>
+                    <p><b>SYSTEM_H will be expanded, and the preprocessor will look for system_1.h as if the #include had been written that way originally. SYSTEM_H could be defined by your Makefile with a -D option.</b></p>
+
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+      
+</body>
+</html>

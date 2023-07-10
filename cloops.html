@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Loops</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointer">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 160px;height: auto;font-size: 35px;color: brown;">C - Loops</h1>   
+            </div>
+          </div>   
+        <p><b>You may encounter situations, when a block of code needs to be executed several number of times. In general, statements are executed sequentially: The first <br>
+             statement in a function is executed first, followed by the second, and so on.Programming languages provide various control structures that allow for more complicated <br>
+              execution paths.A loop statement allows us to execute a statement or group of statements multiple times. Given below is the general form of a loop statement in most of the <br> programming languages
+             </b></p>
+             <ol>
+                <li>while loop - Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.</li>
+                <li>for loop - Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</li>
+                <li>do...while loop - It is more like a while statement, except that it tests the condition at the end of the loop body.</li>
+                <li>nested loops - You can use one or more loops inside any other while, for, or do..while loop.</li>
+             </ol>
+        
+            <h2 style="background-color:  bisque;width: 270px;height: auto;color: brown;">Loop Control Statements</h2>
+            <p><b>Loop control statements change execution from its normal sequence. When execution leaves a scope, all automatic objects that were created in that scope are destroyed.
+    </b></p>
+    <ol>
+        <li>break statement - Terminates the loop or switch statement and transfers execution to the statement immediately following the loop or switch.</li>
+        <li>continue statement - Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating</li>
+        <li>goto statement - Transfers control to the labeled statement.</li>
+    </ol>
+        
+            <h2 style="background-color:  bisque;width: 190px;height: auto;color: brown;">The Infinite Loop</h2>
+            <p><b>A loop becomes an infinite loop if a condition never becomes false. The for loop is traditionally used for this purpose. Since none of the three expressions that form the 'for' loop are required, you can make an endless <br>
+                 loop by leaving the conditional expression empty.
+            </b></p>
+            <p>#include <stdio.h> <br>
+ 
+                int main () { <br>
+                
+                   for( ; ; ) { <br>
+                      printf("This loop will run forever.\n"); <br>
+                   } <br>
+                
+                   return 0; <br>
+                }</p>
+                <p><b>When the conditional expression is absent, it is assumed to be true. You may have an initialization and increment expression, but C programmers more commonly use the for(;;) construct to signify an infinite loop.</b></p>
+          
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        
+    
+    
+    
+</body>
+</html>

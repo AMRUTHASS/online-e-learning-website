@@ -1,0 +1,201 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-typecasting</title>
+    <style>
+               :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 260px;height: auto;font-size: 35px;color: brown;">C - Type Casting</h1>   
+            </div>
+          </div>   
+        <p><b>Converting one datatype into another is known as type casting or, type-conversion. For example, if you want to store a 'long' value into a simple integer then you  <br>
+             can type cast 'long' to 'int'. You can convert the values from one type to another explicitly using the cast operator as follows</b></p>
+             <p>(type_name) expression</p>
+             <p><b>Consider the following example where the cast operator causes the division of one integer variable by another to be performed as a floating-point operation </b></p>
+             <p>#include <stdio.h> <br>
+
+                main() { <br>
+                
+                   int sum = 17, count = 5; <br>
+                   double mean; <br>
+                
+                   mean = (double) sum / count; <br>
+                   printf("Value of mean : %f\n", mean ); <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                <p>Value of mean : 3.400000</p>
+                <p><b>It should be noted here that the cast operator has precedence over division, so the value of sum is first converted to type double and finally it gets divided <br>
+                     by count yielding a double value.Type conversions can be implicit which is performed by the compiler automatically, or it can be specified explicitly through <br>
+                      the use of the cast operator. It is considered good programming practice to use the cast operator whenever type conversions are necessary.</b></p>
+            <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">Integer Promotion</h2>
+            <p><b>Integer promotion is the process by which values of integer type "smaller" than int or unsigned int are converted either to int or unsigned int. Consider an example <br>
+                 of adding a character with an integer
+             </b></p>
+             <p>#include <stdio.h> <br>
+
+                main() { <br>
+                
+                   int  i = 17; <br>
+                   char c = 'c'; /* ascii value is 99 */ <br>
+                   int sum; <br>
+                
+                   sum = i + c; <br>
+                   printf("Value of sum : %d\n", sum ); <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                <p>Value of sum : 116</p>
+                <p><b>Here, the value of sum is 116 because the compiler is doing integer promotion and converting the value of 'c' to ASCII before performing the actual addition operation.</b></p>
+        
+            <h2 style="background-color:  bisque;width: 300px;height: auto;color: brown;">Usual Arithmetic Conversion</h2>
+            <p><b>The usual arithmetic conversions are implicitly performed to cast their values to a common type. The compiler first performs integer promotion; if the operands still <br>
+                 have different types.The usual arithmetic conversions are not performed for the assignment operators, nor for the logical operators && and ||. Let us take the <br>
+                  following example to understand the concept 
+    </b></p>
+    <p>#include <stdio.h> <br>
+
+        main() { <br>
+        
+           int  i = 17; <br>
+           char c = 'c'; /* ascii value is 99 */ <br>
+           float sum; <br>
+        
+           sum = i + c; <br>
+           printf("Value of sum : %f\n", sum ); <br>
+        }</p>
+        <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+        <p>Value of sum : 116.000000</p>
+        <p><b>Here, it is simple to understand that first c gets converted to integer, but as the final value is double, usual arithmetic conversion applies and the compiler converts <br>
+             i and c into 'float' and adds them yielding a 'float' result.
+
+        </b></p>
+           
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+      
+    
+</body>
+</html>

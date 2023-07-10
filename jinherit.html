@@ -1,0 +1,338 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Inheritance</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+  
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 280px;height: auto;font-size: 35px;color: brown;">Java-Inheritance</h1>   
+            </div>
+          </div>  
+          <p>Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another. With the use of inheritance the information is made manageable in a hierarchical order.
+          <br>
+            The class which inherits the properties of other is known as subclass (derived class, child class) and the class whose properties are inherited is known as superclass (base class, parent class).</p> 
+            <h2 style="background-color:  bisque;width: 185px;height: auto;color: brown;">extend keyword</h2>
+            <p><b>extends</b> is the keyword used to inherit the properties of a class. Following is the syntax of extends keyword.</p>
+            <p><b>Syntax</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              class Super {<br>
+                .....<br>
+                .....<br>
+              }<br>
+             class Sub extends Super {<br>
+                .....<br>
+                .....<br>
+             }</p>
+          <p><b>Sample Code</b></p>
+          <p>Following is an example demonstrating Java inheritance. In this example, you can observe two classes namely Calculation and My_Calculation.
+            <br>
+            Using extends keyword, the My_Calculation inherits the methods addition() and Subtraction() of Calculation class.
+            <br>
+            Copy and paste the following program in a file with name My_Calculation.java</p>
+          <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              class Calculation {<br>
+                int z;<br>
+               
+                public void addition(int x, int y) {<br>
+                   z = x + y;<br>
+                   System.out.println("The sum of the given numbers:"+z);<br>
+                }<br>
+               
+                public void Subtraction(int x, int y) {<br>
+                   z = x - y;<br>
+                   System.out.println("The difference between the given numbers:"+z);<br>
+                }<br>
+              }<br>
+             
+             public class My_Calculation extends Calculation {<br>
+                public void multiplication(int x, int y) {<br>
+                   z = x * y;<br>
+                   System.out.println("The product of the given numbers:"+z);<br>
+                }<br>
+               
+                public static void main(String args[]) {<br>
+                  int a = 20, b = 10;<br>
+                  My_Calculation demo = new My_Calculation();<br>
+                  demo.addition(a, b);<br>
+                  demo.Subtraction(a, b);<br>
+                  demo.multiplication(a, b);<br>
+                }<br>
+            }
+          </p>
+          <p>Compile and execute the above code as shown below.</p>
+          <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            javac My_Calculation.java<br>
+            java My_Calculation
+          </p>
+          <p>After executing the program, it will produce the following result −</p>
+          <p><b>Output</b></p>
+          <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            The sum of the given numbers:30<br>
+            The difference between the given numbers:10<br>
+            The product of the given numbers:200
+          </p>
+          <p>In the given program, when an object to <b>My_Calculation</b> class is created, a copy of the contents of the superclass is made within it. That is why, using the object of the subclass you can access the members of a superclass.</p>
+           <img src="inheritance.jpg"> 
+           <p>The Superclass reference variable can hold the subclass object, but using that variable you can access only the members of the superclass, so to access the members of both classes it is recommended to always create reference variable to the subclass.
+            <br>
+            If you consider the above program, you can instantiate the class as given below. But using the superclass reference variable ( <b>cal</b> in this case) you cannot call the method <b>multiplication()</b>, which belongs to the subclass My_Calculation.
+           </p>
+           <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            Calculation demo = new My_Calculation();<br>
+            demo.addition(a, b);<br>
+            demo.Subtraction(a, b);
+          </p>
+          <p><b>Note</b> − A subclass inherits all the members (fields, methods, and nested classes) from its superclass. Constructors are not members, so they are not inherited by subclasses, but the constructor of the superclass can be invoked from the subclass.</p>
+          <h2 style="background-color:  bisque;width: 215px;height: auto;color: brown;">The super keyword</h2>
+          <p>The <b>super</b> keyword is similar to <b>this</b> keyword. Following are the scenarios where the super keyword is used.
+            <br>
+          It is used to <b>differentiate the members</b> of superclass from the members of subclass, if they have same names.
+          <br>
+          It is used to <b>invoke the superclass</b> constructor from subclass.</p>
+          <h2 style="background-color:  bisque;width: 325px;height: auto;color: brown;">Differentiating the Members</h2>
+          <p>If a class is inheriting the properties of another class. And if the members of the superclass have the names same as the sub class, to differentiate these variables we use super keyword as shown below.</p>
+          <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            super.variable<br>
+            super.method();
+            </p>    
+            <h3><b>Sample Code</b></h3>
+            <p>This section provides you a program that demonstrates the usage of the super keyword.
+              <br>
+              In the given program, you have two classes namely Sub_class and Super_class, both have a method named display() with different implementations, and a variable named num with different values. We are invoking display() method of both classes and printing the value of the variable num of both classes. Here you can observe that we have used super keyword to differentiate the members of superclass from subclass.
+              <br>
+              Copy and paste the program in a file with name Sub_class.java.</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              class Super_class {<br>
+                int num = 20;<br>
+             
+                // display method of superclass<br>
+                public void display() {<br>
+                   System.out.println("This is the display method of superclass");<br>
+                }<br>
+              }<br>
+             
+             public class Sub_class extends Super_class {<br>
+                int num = 10;<br>
+             
+                // display method of sub class<br>
+                public void display() {<br>
+                   System.out.println("This is the display method of subclass");<br>
+                }<br>
+             
+                public void my_method() {<br>
+                // Instantiating subclass<br>
+                Sub_class sub = new Sub_class();<br>
+
+                // Invoking the display() method of sub class<br>
+               sub.display();<br>
+
+               // Invoking the display() method of superclass<br>
+               super.display();<br>
+
+              // printing the value of variable num of subclass<br>
+              System.out.println("value of the variable named num in sub class:"+ sub.num);<br>
+
+              // printing the value of variable num of superclass<br>
+              System.out.println("value of the variable named num in super class:"+ super.num);<br>
+              }<br>
+
+              public static void main(String args[]) {<br>
+              Sub_class obj = new Sub_class();<br>
+              obj.my_method();<br>
+              }<br>
+              }      
+            </p>
+            <p>Compile and execute the above code using the following syntax.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              javac Super_Demo<br>
+              java Super
+            </p>
+            <p>On executing the program, you will get the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              This is the display method of subclass<br>
+              This is the display method of superclass<br>
+              value of the variable named num in sub class:10<br>
+              value of the variable named num in super class:20<br>
+            </p>
+            <h2 style="background-color:  bisque;width: 370px;height: auto;color: brown;">Invoking Superclass Constructor</h2>
+            <p>If a class is inheriting the properties of another class, the subclass automatically acquires the default constructor of the superclass. But if you want to call a parameterized constructor of the superclass, you need to use the super keyword as shown below.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              super(values);<br>
+            </p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              class Superclass {<br>
+                int age;<br>
+             
+                Superclass(int age) {<br>
+                   this.age = age;<br> 		 
+                }<br>
+             
+                public void getAge() {<br>
+                   System.out.println("The value of the variable named age in super class is: " +age);<br>
+                }<br>
+              }<br>
+             
+             public class Subclass extends Superclass {<br>
+                Subclass(int age) {<br>
+                   super(age);<br>
+                }<br>
+             
+                public static void main(String args[]) {<br>
+                   Subclass s = new Subclass(24);<br>
+                   s.getAge();<br>
+                }<br>
+              }  </p>
+              <p>Compile and execute the above code using the following syntax.</p>
+              <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                javac Subclass<br>
+                java Subclass
+              </p>
+              <p>On executing the program, you will get the following result −</p>
+              <p><b>Output</b></p>
+              <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                The value of the variable named age in super class is: 24
+            </p>
+              <h2 style="background-color:  bisque;width: 245px;height: auto;color: brown;">Types of Inheritance</h2>
+            <p>There are various types of inheritance as demonstrated below.</p>
+            <img src="types_of_inheritance.jpg">
+            <p>A very important fact to remember is that Java does not support multiple inheritance. This means that a class cannot extend more than one class. </p>
+            </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

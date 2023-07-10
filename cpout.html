@@ -1,0 +1,228 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Basic Input/Output</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+         
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+         
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+  
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 380px;height: auto;font-size: 35px;color: brown;">C++ Basic Input/Output</h1>   
+          </div>
+        </div>
+      
+        <p><b>The C++ standard libraries provide an extensive set of input/output capabilities which we will see in subsequent chapters. This chapter will discuss very basic and most common I/O operations required for <br>
+             C++ programming.C++ I/O occurs in streams, which are sequences of bytes. If bytes flow from a device like a keyboard, a disk drive, or a network connection etc. to main memory, this is called input <br>
+              operation and if bytes flow from main memory to a device like a display screen, a printer, a disk drive, or a network connection, etc., this is called output operation.</b></p>
+             
+             <h1 style="background-color: bisque;width: 380px;height: auto;font-size: 35px;color: brown;">I/O Library Header Files</h1>   
+             <p><b>There are following header files important to C++ programs</b></p>
+             <ol>
+                <li>	
+                    <iostream> - This file defines the cin, cout, cerr and clog objects, which correspond to the standard input stream, the standard output stream, the un-buffered standard error stream and the buffered standard error stream, respectively.</li>
+                        <li>	
+                            <iomanip> - This file declares services useful for performing formatted I/O with so-called parameterized stream manipulators, such as setw and setprecision.</li>
+                                <li>	
+                                    <fstream> - This file declares services for user-controlled file processing. We will discuss about it in detail in File and Stream related chapter.</li>
+             </ol>
+    
+
+            <h2 style="background-color: bisque;width: 380px;height: auto;color: brown;">The Standard Output Stream (cout)</h2>
+            <p><b>The predefined object cout is an instance of ostream class. The cout object is said to be "connected to" the standard output device, which usually is the display screen. The cout <br>
+                 is used in conjunction with the stream insertion operator, which is written as << which are two less than signs as shown in the following example.</b></p>
+                 <p>#include <iostream> <br>
+  
+                    using namespace std; <br>
+                     
+                    int main() { <br>
+                       char str[] = "Hello C++"; <br>
+                     
+                       cout << "Value of str is : " << str << endl;  <br>
+                    }</p>
+                    <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                    <p>Value of str is : Hello C++</p>
+                    <p><b>The C++ compiler also determines the data type of variable to be output and selects the appropriate stream insertion operator to display the value. The << operator is overloaded to output data items of built-in types integer, float, <br>
+                         double, strings and pointer values.The insertion operator << may be used more than once in a single statement as shown above and endl is used to add a new-line at the end of the line.</b></p>
+                
+          
+                <h2 style="background-color: bisque;width: 350px;height: auto;color: brown;">The Standard Input Stream (cin)</h2>
+                <p><b>The predefined object cin is an instance of istream class. The cin object is said to be attached to the standard input device, which usually is the keyboard. The cin is used in conjunction with the stream extraction operator, which is written as >> which are two greater than signs as shown in the following example.</b></p>
+                <p>#include <iostream> <br>
+ 
+                    using namespace std; <br>
+                      
+                    int main() { <br>
+                       char name[50]; <br>
+                     
+                       cout << "Please enter your name: "; <br>
+                       cin >> name; <br>
+                       cout << "Your name is: " << name << endl; <br>
+                     
+                    }</p>
+                    <p><b>When the above code is compiled and executed, it will prompt you to enter a name. You enter a value and then hit enter to see the following result</b></p>
+                    <p>Please enter your name: cplusplus <br>
+                        Your name is: cplusplus</p>
+                        <p><b>The C++ compiler also determines the data type of the entered value and selects the appropriate stream extraction operator to extract the value and store it in the given <br> variables.The stream extraction operator >> may be used more than once in a single statement. To request more than one datum you can use the following</b></p>
+                        <p>cin >> name >> age;</p>
+                        <p><b>This will be equivalent to the following two statements</b></p>
+                        <p>cin >> name; <br>
+                            cin >> age;</p>
+
+                            <h2 style="background-color: bisque;width: 360px;height: auto;color: brown;">The Standard Error Stream (cerr)</h2>    
+                            <p><b>The predefined object cerr is an instance of ostream class. The cerr object is said to be attached to the standard error device, which is also a display screen but the object cerr <br>
+                                 is un-buffered and each stream insertion to cerr causes its output to appear immediately.The cerr is also used in conjunction with the stream insertion operator as shown in the <br>
+                                  following example.</b></p>    
+                                  <p>#include <iostream> <br>
+ 
+                                    using namespace std; <br>
+                                     
+                                    int main() { <br>
+                                       char str[] = "Unable to read...."; <br> 
+                                     
+                                       cerr << "Error message : " << str << endl; <br>
+                                    }</p>  
+                                    <p><b>When the above code is compiled and executed, it produces the following result</b></p>   
+                                    <p>Error message : Unable to read....</p> 
+                                    <h2 style="background-color: bisque;width: 340px;height: auto;color: brown;">The Standard Log Stream (clog)</h2>
+                                    <p><b>The predefined object clog is an instance of ostream class. The clog object is said to be attached to the standard error device, which is also a display screen but the object <br>
+                                         clog is buffered. This means that each insertion to clog could cause its output to be held in a buffer until the buffer is filled or until the buffer is flushed.The clog is <br>
+                                          also used in conjunction with the stream insertion operator as shown in the following example.</b></p>    
+                                          <p>#include <iostream> <br>
+ 
+                                            using namespace std; <br>
+                                             
+                                            int main() { <br>
+                                               char str[] = "Unable to read...."; <br>
+                                             
+                                               clog << "Error message : " << str << endl; <br>
+                                            }</p> 
+                                            <p><b>When the above code is compiled and executed, it produces the following result </b></p>    
+                                            <p>Error message : Unable to read....</p>
+                                            <p><b>You would not be able to see any difference in cout, cerr and clog with these small examples, but while writing and executing big programs the difference becomes obvious. <br>
+                                                 So it is good practice to display error messages using cerr stream and while displaying other log messages then clog should be used.</b></p>                     
+
+
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

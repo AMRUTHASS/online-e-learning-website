@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Encapsulation in C++</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+         
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+   
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 410px;height: auto;font-size: 35px;color: brown;">Data Encapsulation in C++</h1>   
+          </div>
+        </div>
+      
+        <p><b>All C++ programs are composed of the following two fundamental elements </b></p>
+        <ul>
+            <li>Program statements (code) - This is the part of a program that performs actions and they are called functions.</li>
+            <li>Program data - The data is the information of the program which gets affected by the program functions.</li>
+        </ul>
+        <p><b>Encapsulation is an Object Oriented Programming concept that binds together the data and functions that manipulate the data, and that keeps both safe from outside interference and misuse. Data encapsulation led to the important OOP concept of data hiding.Data encapsulation is a mechanism <br>
+             of bundling the data, and the functions that use them and data abstraction is a mechanism of exposing only the interfaces and hiding the implementation details from the user.C++ supports the properties of encapsulation and data hiding through the creation of user-defined types, called <br>
+              classes. We already have studied that a class can contain private, protected and public members. By default, all items defined in a class are private. For example</b></p>
+              <p>class Box { <br>
+                public: <br>
+                   double getVolume(void) { <br>
+                      return length * breadth * height; <br>
+                   } <br>
+             
+                private: <br>
+                   double length;      // Length of a box <br>
+                   double breadth;     // Breadth of a box <br>
+                   double height;      // Height of a box <br>
+             };</p>
+             <p><b>The variables length, breadth, and height are private. This means that they can be accessed only by other members of the Box class, and not by any other part of your program. This is one way encapsulation is achieved.To make parts of a class public (i.e., accessible to other parts <br>
+                 of your program), you must declare them after the public keyword. All variables or functions defined after the public specifier are accessible by all other functions in your program.Making one class a friend of another exposes the implementation details and reduces encapsulation. The <br>
+                  ideal is to keep as many of the details of each class hidden from all other classes as possible.</b></p>
+             
+             <h1 style="background-color: bisque;width: 450px;height: auto;font-size: 35px;color: brown;">Data Encapsulation Example</h1>   
+             <p><b>Any C++ program where you implement a class with public and private members is an example of data encapsulation and data abstraction. Consider the following example</b></p>
+            <p>#include <iostream> <br>
+                using namespace std; <br>
+                
+                class Adder { <br>
+                   public: <br>
+                      // constructor <br>
+                      Adder(int i = 0) { <br>
+                         total = i; <br>
+                      } <br>
+                      
+                      // interface to outside world <br>
+                      void addNum(int number) { <br>
+                         total += number; <br>
+                      } <br>
+                      
+                      // interface to outside world <br>
+                      int getTotal() { <br>
+                         return total; <br>
+                      }; <br>
+                   
+                   private: <br>
+                      // hidden data from outside world <br>
+                      int total; <br>
+                }; <br>
+                
+                int main() { <br>
+                   Adder a; <br>
+                   
+                   a.addNum(10); <br>
+                   a.addNum(20); <br>
+                   a.addNum(30); <br>
+                
+                   cout << "Total " << a.getTotal() <<endl; <br>
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                <p>Total 60</p>
+
+            <h2 style="background-color: bisque;width: 200px;height: auto;color: brown;">Designing Strategy</h2>
+            <p><b>Most of us have learnt to make class members private by default unless we really need to expose them. That's just good encapsulation.This is applied <br>
+                 most frequently to data members, but it applies equally to all members, including virtual functions.</b></p>
+                                                         So it is good practice to display error messages using cerr stream and while displaying other log messages then clog should be used.</b></p>                     
+
+
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

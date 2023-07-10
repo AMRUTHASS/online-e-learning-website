@@ -1,0 +1,390 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Basic Operators</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+ </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 360px;height: auto;font-size: 35px;color: brown;">Java-Basic Operators</h1>   
+            </div>
+          </div>  
+          <p>Java provides a rich set of operators to manipulate variables. We can divide all the Java operators into the following groups −</p>
+          <ul>
+            <li>Arithmetic Operators</li><br>
+            <li>Relational Operators</li><br>
+            <li>Bitwise Operators</li><br>
+            <li>Logical Operators</li><br>
+            <li>Assignment Operators</li><br>
+        </ul>
+          <h2 style="background-color:  bisque;width: 290px;height: auto;color: brown;">The Arithmetic Operators</h2>
+          <p>Arithmetic operators are used in mathematical expressions in the same way that they are used in algebra. The following table lists the arithmetic operators −</p>
+                <table style="border:1px solid black">
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td>+ (Addition)</td>
+                        <td>Adds values on either side of the operator.</td>
+                        <td>A + B will give 30</td>
+                    </tr>
+                    <tr>
+                        <td>- (Subtraction)</td>
+                        <td>Subtracts right-hand operand from left-hand operand</td>
+                        <td>A - B will give -10</td>
+                    </tr>
+                    <tr>
+                        <td>* (Multiplication)</td>
+                        <td>Multiplies values on either side of the operator.</td>
+                        <td>A * B will give 200</td>
+                    </tr>
+                    <tr>
+                        <td>/ (Division)</td>
+                        <td>Divides left-hand operand by right-hand operand.</td>
+                        <td>B / A will give 2</td>
+                    </tr>
+                    <tr>
+                        <td>% (Modulus)</td>
+                        <td>Divides left-hand operand by right-hand operand and returns remainder.</td>
+                        <td>B % A will give 0</td>
+                    </tr>
+                    <tr>
+                        <td>++ (Increment)</td>
+                        <td>Increases the value of operand by 1.</td>
+                        <td>B++ gives 21</td>
+                    </tr>
+                    <tr>
+                        <td>-- (Decrement)</td>
+                        <td>Decreases the value of operand by 1.</td>
+                        <td>B-- gives 19</td>
+                    </tr>
+                    </table>
+            <h2 style="background-color:  bisque;width: 290px;height: auto;color: brown;">The Relational Operators</h2>
+            <p>There are following relational operators supported by Java language.</p>
+            <table style="border:1px solid black">
+              <tr>
+                  <th>Operator</th>
+                  <th>Description</th>
+                  <th>Example</th>
+              </tr>
+              <tr>
+                  <td>== (equal to)</td>
+                  <td>Checks if the values of two operands are equal or not, if yes then condition becomes true.</td>
+                  <td>(A == B) is not true.</td>
+              </tr>
+              <tr>
+                  <td>!= (not equal to)</td>
+                  <td>Checks if the values of two operands are equal or not, if values are not equal then condition becomes true.</td>
+                  <td>(A != B) is true.</td>
+              </tr>
+              <tr>
+                  <td>> (greater than)</td>
+                  <td>Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.</td>
+                  <td>(A > B) is not true.</td>
+              </tr>
+              <tr>
+                  <td> < (less than)</td>
+                  <td>Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.</td>
+                  <td>(A < B) is true.</td>
+              </tr>
+              <tr>
+                  <td>>= (greater than or equal to)</td>
+                  <td>Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.</td>
+                  <td>(A >= B) is not true.</td>
+              </tr>
+              <tr>
+                  <td><= (less than or equal to)</td>
+                  <td>Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.</td>
+                  <td>(A <= B) is true.</td>
+              </tr>
+              </table>
+              <h2 style="background-color:  bisque;width: 290px;height: auto;color: brown;">The Bitwise Operators</h2>
+              <p>Java defines several bitwise operators, which can be applied to the integer types, long, int, short, char, and byte.<br>
+
+                Bitwise operator works on bits and performs bit-by-bit operation. Assume if a = 60 and b = 13; now in binary format they will be as follows −<br>
+                
+                a = 0011 1100<br>
+                
+                b = 0000 1101<br>
+                
+                -----------------<br>
+                
+                a&b = 0000 1100<br>
+                
+                a|b = 0011 1101<br>
+                
+                a^b = 0011 0001<br>
+                
+                ~a  = 1100 0011<br>
+                The following table lists the bitwise operators −</p>
+                <table style="border:1px solid black">
+                  <tr>
+                      <th>Operator</th>
+                      <th>Description</th>
+                      <th>Example</th>
+                  </tr>
+                  <tr>
+                      <td>& (bitwise and)</td>
+                      <td>Binary AND Operator copies a bit to the result if it exists in both operands.</td>
+                      <td>(A & B) will give 12 which is 0000 1100</td>
+                  </tr>
+                  <tr>
+                      <td>| (bitwise or)</td>
+                      <td>Binary OR Operator copies a bit if it exists in either operand.</td>
+                      <td>(A | B) will give 61 which is 0011 1101</td>
+                  </tr>
+                  <tr>
+                      <td>^ (bitwise XOR)</td>
+                      <td>Binary XOR Operator copies the bit if it is set in one operand but not both.</td>
+                      <td>(A ^ B) will give 49 which is 0011 0001</td>
+                  </tr>
+                  <tr>
+                      <td>~ (bitwise compliment)</td>
+                      <td>Binary Ones Complement Operator is unary and has the effect of 'flipping' bits.</td>
+                      <td>(~A ) will give -61 which is 1100 0011 in 2's complement form due to a signed binary number.</td>
+                  </tr>
+                  <tr>
+                      <td><< (left shift)</td>
+                      <td>Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.</td>
+                      <td>A << 2 will give 240 which is 1111 0000</td>
+                  </tr>
+                  <tr>
+                      <td>>> (right shift)</td>
+                      <td>Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.</td>
+                      <td>A >> 2 will give 15 which is 1111</td>
+                  </tr>
+                  <tr>
+                      <td>>>> (zero fill right shift)</td>
+                      <td>Shift right zero fill operator. The left operands value is moved right by the number of bits specified by the right operand and shifted values are filled up with zeros.</td>
+                      <td>A >>>2 will give 15 which is 0000 1111</td>
+                  </tr>
+                  </table>
+                  <h2 style="background-color:  bisque;width: 290px;height: auto;color: brown;">The Logical Operators</h2>
+                  <p>The following table lists the logical operators −</p>
+                  <table style="border:1px solid black">
+                  <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>&& (logical and)</td>
+                    <td>Called Logical AND operator. If both the operands are non-zero, then the condition becomes true.</td>
+                    <td>(A && B) is false</td>
+                </tr>
+                <tr>
+                    <td>|| (logical or)</td>
+                    <td>Called Logical OR Operator. If any of the two operands are non-zero, then the condition becomes true.</td>
+                    <td>(A || B) is true</td>
+                </tr>
+                <tr>
+                    <td>! (logical not)</td>
+                    <td>Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.</td>
+                    <td>!(A && B) is true</td>
+                </tr>
+              </table>
+                    <h2 style="background-color:  bisque;width: 290px;height: auto;color: brown;">The Assignment Operators</h2>    
+                    <p>Following are the assignment operators supported by Java language −</p>
+                    <table style="border:1px solid black">
+                      <tr>
+                          <th>Operator</th>
+                          <th>Description</th>
+                          <th>Example</th>
+                      </tr>
+                      <tr>
+                          <td>=</td>
+                          <td>Simple assignment operator. Assigns values from right side operands to left side operand.</td>
+                          <td>C = A + B will assign value of A + B into C</td>
+                      </tr>
+                      <tr>
+                          <td>+=</td>
+                          <td>Add AND assignment operator. It adds right operand to the left operand and assign the result to left operand.</td>
+                          <td>C += A is equivalent to C = C + A</td>
+                      </tr>
+                      <tr>
+                          <td>-=</td>
+                          <td>Subtract AND assignment operator. It subtracts right operand from the left operand and assign the result to left operand.</td>
+                          <td>C -= A is equivalent to C = C – A</td>
+                      </tr>
+                      <tr>
+                        <td>*=</td>
+                        <td>Multiply AND assignment operator. It multiplies right operand with the left operand and assign the result to left operand.</td>
+                        <td>C *= A is equivalent to C = C * A</td>
+                    </tr>
+                    <tr>
+                        <td>/=</td>
+                        <td>Divide AND assignment operator. It divides left operand with the right operand and assign the result to left operand.</td>
+                        <td>C /= A is equivalent to C = C / A</td>
+                    </tr>
+                    <tr>
+                        <td>-=</td>
+                        <td>Subtract AND assignment operator. It subtracts right operand from the left operand and assign the result to left operand.</td>
+                        <td>C -= A is equivalent to C = C – A</td>
+                    </tr>
+                    <tr>
+                      <td>%=</td>
+                      <td>Modulus AND assignment operator. It takes modulus using two operands and assign the result to left operand.</td>
+                      <td>C %= A is equivalent to C = C % A</td>
+                  </tr>
+                  <tr>
+                      <td><<=</td>
+                      <td>Left shift AND assignment operator.</td>
+                      <td>C <<= 2 is same as C = C << 2</td>
+                  </tr>
+                  <tr>
+                      <td>>>=</td>
+                      <td>Right shift AND assignment operator.</td>
+                      <td>C >>= 2 is same as C = C >> 2</td>
+                  </tr>
+                  <tr>
+                    <td>&=</td>
+                    <td>Bitwise AND assignment operator.</td>
+                    <td>C &= 2 is same as C = C & 2</td>
+                </tr>
+                <tr>
+                    <td>^=</td>
+                    <td>bitwise exclusive OR and assignment operator.</td>
+                    <td>C ^= 2 is same as C = C ^ 2</td>
+                </tr>
+                <tr>
+                    <td>|=</td>
+                    <td>bitwise inclusive OR and assignment operator.</td>
+                    <td>C |= 2 is same as C = C | 2</td>
+                </tr>
+                      </table>
+                  </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

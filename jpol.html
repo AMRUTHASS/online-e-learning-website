@@ -1,0 +1,292 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Polymorphism</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+  
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 340px;height: auto;font-size: 35px;color: brown;">Java-Polymorphism</h1>   
+            </div>
+          </div>  
+          <p>Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+            <br>
+            Any Java object that can pass more than one IS-A test is considered to be polymorphic. In Java, all Java objects are polymorphic since any object will pass the IS-A test for their own type and for the class Object.
+            <br>
+            It is important to know that the only possible way to access an object is through a reference variable. A reference variable can be of only one type. Once declared, the type of a reference variable cannot be changed.
+            <br>
+            The reference variable can be reassigned to other objects provided that it is not declared final. The type of the reference variable would determine the methods that it can invoke on the object.
+            <br>
+            A reference variable can refer to any object of its declared type or any subtype of its declared type. A reference variable can be declared as a class or interface type.</p> 
+            <p><b>Example</b></p>
+            <p>Let us look at an example.</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                public interface Vegetarian{}<br>
+                public class Animal{}<br>
+                public class Deer extends Animal implements Vegetarian{}
+            </p>
+            <p>Now, the Deer class is considered to be polymorphic since this has multiple inheritance. Following are true for the above examples −</p>
+            <ul>
+                <li>A Deer IS-A Animal</li><br>
+                <li>A Deer IS-A Vegetarian</li><br>
+                <li>A Deer IS-A Deer</li><br>
+                <li>A Deer IS-A Object</li>
+            </ul>
+            <p>When we apply the reference variable facts to a Deer object reference, the following declarations are legal −</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Deer d = new Deer();<br>
+                Animal a = d;<br>
+                Vegetarian v = d;<br>
+                Object o = d;
+            </p>
+            <p>All the reference variables d, a, v, o refer to the same Deer object in the heap.</p>
+            <h2 style="background-color:  bisque;width: 195px;height: auto;color: brown;">Virtual Methods</h2>
+            <p>In this section, I will show you how the behavior of overridden methods in Java allows you to take advantage of polymorphism when designing your classes.
+                <br>
+                We already have discussed method overriding, where a child class can override a method in its parent. An overridden method is essentially hidden in the parent class, and is not invoked unless the child class uses the super keyword within the overriding method.</p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                /* File name : Employee.java */<br>
+                public class Employee {<br>
+                private String name;<br>
+                private String address;<br>
+                private int number;<br>
+
+                public Employee(String name, String address, int number) {<br>
+                System.out.println("Constructing an Employee");<br>
+                this.name = name;<br>
+                this.address = address;<br>
+                this.number = number;<br>
+                }<br>
+
+                public void mailCheck() {<br>
+                System.out.println("Mailing a check to " + this.name + " " + this.address);<br>
+                }
+
+                public String toString() {<br>
+                return name + " " + address + " " + number;<br>
+                }<br>
+
+                public String getName() {<br>
+                return name;<br>
+                }<br>
+
+                public String getAddress() {<br>
+                return address;<br>
+                }<br>
+
+                public void setAddress(String newAddress) {<br>
+                address = newAddress;<br>
+                }<br>
+
+                public int getNumber() {<br>
+                return number;<br>
+                }<br>
+                }
+            </p>
+            <p>Now suppose we extend Employee class as follows −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                /* File name : Salary.java */<br>
+                public class Salary extends Employee {<br>
+                   private double salary; // Annual salary<br>
+                   
+                   public Salary(String name, String address, int number, double salary) {<br>
+                      super(name, address, number);<br>
+                      setSalary(salary);<br>
+                   }<br>
+                   
+                   public void mailCheck() {<br>
+                      System.out.println("Within mailCheck of Salary class ");<br>
+                      System.out.println("Mailing check to " + getName()<br>
+                      + " with salary " + salary);<br>
+                   }<br>
+                   
+                   public double getSalary() {<br>
+                      return salary;<br>
+                   }<br>
+                   
+                   public void setSalary(double newSalary) {<br>
+                      if(newSalary >= 0.0) {<br>
+                         salary = newSalary;<br>
+                      }<br>
+                   }<br>
+                   
+                   public double computePay() {<br>
+                      System.out.println("Computing salary pay for " + getName());<br>
+                      return salary/52;<br>
+                   }<br>
+                }
+            </p>
+            <p>Now, you study the following program carefully and try to determine its output −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                /* File name : VirtualDemo.java */<br>
+                public class VirtualDemo {<br>
+                
+                   public static void main(String [] args) {<br>
+                      Salary s = new Salary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);<br>
+                      Employee e = new Salary("John Adams", "Boston, MA", 2, 2400.00);<br>
+                      System.out.println("Call mailCheck using Salary reference --");<br>   
+                      s.mailCheck();<br>
+                      System.out.println("\n Call mailCheck using Employee reference--");<br>
+                      e.mailCheck();<br>
+                   }<br>
+                }
+            </p>
+            <p>This will produce the following result −</p>
+            <p><b>Output</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                Constructing an Employee<br>
+                Constructing an Employee<br>
+
+                Call mailCheck using Salary reference --<br>
+                Within mailCheck of Salary class<br>
+                Mailing check to Mohd Mohtashim with salary 3600.0<br>
+
+                Call mailCheck using Employee reference--<br>
+                Within mailCheck of Salary class<br>
+                Mailing check to John Adams with salary 2400.0
+            </p>
+            <p>Here, we instantiate two Salary objects. One using a Salary reference <b>s</b>, and the other using an Employee reference <b>e</b>.
+                <br><br>
+                While invoking s.mailCheck(), the compiler sees mailCheck() in the Salary class at compile time, and the JVM invokes mailCheck() in the Salary class at run time.
+                <br><br>
+                mailCheck() on <b>e</b> is quite different because <b>e</b> is an Employee reference. When the compiler sees e.mailCheck(), the compiler sees the mailCheck() method in the Employee class.
+                <br><br>
+                Here, at compile time, the compiler used mailCheck() in Employee to validate this statement. At run time, however, the JVM invokes mailCheck() in the Salary class.
+                <br><br>
+                This behavior is referred to as virtual method invocation, and these methods are referred to as virtual methods. An overridden method is invoked at run time, no matter what data type the reference is that was used in the source code at compile time</p>
+            </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

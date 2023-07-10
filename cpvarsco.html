@@ -1,0 +1,225 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++-variable scope</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="cpp/cbasyn">C++-basic syntax</a>
+      
+        <a href="cpvarsco">C++-variable scope</a>
+        <a href="cpmod">C++-Modifier Types</a>
+        <a href="cparr">C++-Arrays</a>
+        <a href="cpstr">C++-Strings</a>
+        <a href="cppoint">C++-pointers</a>
+        <a href="cpvar">C++-Variable Types</a>
+        <a href="cpclaobj">C++-Classes and Objects</a>
+        <a href="cpinherit">C++-Inheritance</a>
+        <a href="cpover">C++-Overloading</a>
+        <a href="cppoly">C++-Polymorphism</a>
+        <a href="cpabs">C++-Abstraction</a>
+        <a href="cpenc">C++-Encapsulation</a>  
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 300px;height: auto;font-size: 35px;color: brown;">C++-Variable scope</h1>   
+            </div>
+          </div>  
+        <p><b>A scope is a region of the program and broadly speaking there are three places, where variables can be declared </b></p>
+        <ul>
+            <li>Inside a function or a block which is called local variables,</li>
+            <li>In the definition of function parameters which is called formal parameters.</li>
+            <li>Outside of all functions which is called global variables.</li>
+        </ul>
+        <p><b>We will learn what is a function and it's parameter in subsequent chapters. Here let us explain what are local <br>
+             and global variables.</b></p>
+            <h2 style="background-color:  bisque;width: 170px;height: auto;color: brown;">Local Variables</h2>
+            <p><b>Variables that are declared inside a function or block are local variables. They can be used only by statements <br>
+                 that are inside that function or block of code. Local variables are not known to functions outside their own. <br>
+                  Following is the example using local variables
+             </b></p>
+             <p>#include <iostream> <br>
+                using namespace std; <br>
+                 
+                int main () { <br>
+                   // Local variable declaration: <br>
+                   int a, b; <br>
+                   int c; <br>
+                 
+                   // actual initialization <br>
+                   a = 10; <br>
+                   b = 20; <br>
+                   c = a + b; <br>
+                 
+                   cout << c; <br>
+                 
+                   return 0; <br>
+                } <br>
+                </p>
+        
+            <h2 style="background-color:  bisque;width: 180px;height: auto;color: brown;">Global Variables</h2>
+            <p><b>Global variables are defined outside of all the functions, usually on top of the program. The global variables will hold their value throughout the life-time of your program.
+
+                A global variable can be accessed by any function. That is, a global variable is available for use throughout your entire program after its declaration. Following is the example <br>
+                 using global and local variables
+    </b></p>
+        <p>#include <iostream> <br>
+            using namespace std; <br>
+             
+            // Global variable declaration: <br>
+            int g; <br>
+             
+            int main () { <br>
+               // Local variable declaration: <br>
+               int a, b; <br>
+             
+               // actual initialization <br>
+               a = 10; <br>
+               b = 20; <br>
+               g = a + b; <br>
+              
+               cout << g; <br>
+             
+               return 0; <br>
+            }</p>
+            <p><b>A program can have same name for local and global variables but value of local variable inside a function will take preference. For example</b></p>
+            <p>#include <iostream> <br>
+                using namespace std; <br>
+                 
+                // Global variable declaration: <br>
+                int g = 20; <br>
+                 
+                int main () { <br>
+                   // Local variable declaration: <br>
+                   int g = 10; <br>
+                 
+                   cout << g; <br>
+                 
+                   return 0; <br>
+                }
+                </p>
+                <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                <p>10</p>
+            <h2 style="background-color:  bisque;width: 400px;height: auto;color: brown;">Initializing Local and Global Variables</h2>
+            <p><b>When a local variable is defined, it is not initialized by the system, you must initialize it yourself. Global variables are initialized automatically <br>
+                 by the system when you define them as follows
+            </b></p>
+             <li>Datatype &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initializer</li>
+             </li>int&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</li>
+             <li>char&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'\0'</li>
+             <li>float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</li>
+             <li>double&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</li>
+             <li>pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL</li>
+             <p><b>It is a good programming practice to initialize variables properly, otherwise sometimes program would produce unexpected result.</b></p>
+            
+          
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>  
+</body>
+</html>

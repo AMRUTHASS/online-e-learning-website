@@ -1,0 +1,228 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Strings</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+          
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+         
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <button id="openNav" class="LE-button LE-teal LE-xlarge" onclick="LE_open()">&#9776;</button>
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 200px;height: auto;font-size: 35px;color: brown;">C++ Strings</h1>   
+          </div>
+        </div>
+      
+        <p><b>C++ provides following two types of string representations</b></p>
+        <ul>
+            <li>The C-style character string.</li>
+            <li>The string class type introduced with Standard C++.</li>
+        </ul>
+             <h1 style="background-color: bisque;width: 460px;height: auto;font-size: 35px;color: brown;">The C-Style Character String</h1>   
+
+    
+             <p><b>The C-style character string originated within the C language and continues to be supported within C++. This string is actually a one-dimensional array of characters which is terminated by a <br>
+                 null character '\0'. Thus a null-terminated string contains the characters that comprise the string followed by a null.The following declaration and initialization create a string consisting <br>
+                  of the word "Hello". To hold the null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word "Hello."</b></p>
+                  <p>char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};</p>
+                  <p><b>If you follow the rule of array initialization, then you can write the above statement as follows</b></p>
+                  <p>char greeting[] = "Hello";</p>
+                  <p><b>C++ supports a wide range of functions that manipulate null-terminated strings</b></p>
+                  <ol>
+                    <li>	
+                        strcpy(s1, s2); - Copies string s2 into string s1.</li>
+                        <li>	
+                            strcat(s1, s2); - Concatenates string s2 onto the end of string s1.</li>
+                            <li>	
+                                strlen(s1); - Returns the length of string s1.</li>
+                                <li>strcmp(s1, s2); -  Returns 0 if s1 and s2 are the same; less than 0 if s1<s2; greater than 0 if s1>s2.</li>
+                                    <li>strchr(s1, ch); - Returns a pointer to the first occurrence of character ch in string s1.</li>
+                                    <li>strstr(s1, s2); - Returns a pointer to the first occurrence of string s2 in string s1.</li>
+                  </ol>
+                  <p><b>Following example makes use of few of the above-mentioned functions</b></p>
+                  <p>#include <iostream> <br>
+                    #include <cstring> <br>
+                    
+                    using namespace std; <br>
+                    
+                    int main () { <br>
+                    
+                       char str1[10] = "Hello"; <br>
+                       char str2[10] = "World"; <br>
+                       char str3[10]; <br>
+                       int  len ; <br>
+                    
+                       // copy str1 into str3 <br>
+                       strcpy( str3, str1); <br>
+                       cout << "strcpy( str3, str1) : " << str3 << endl; <br>
+                    
+                       // concatenates str1 and str2 <br>
+                       strcat( str1, str2); <br>
+                       cout << "strcat( str1, str2): " << str1 << endl; <br>
+                    
+                       // total lenghth of str1 after concatenation <br>
+                       len = strlen(str1); <br>
+                       cout << "strlen(str1) : " << len << endl; <br>
+                    
+                       return 0; <br>
+                    }</p>
+                    <p><b>When the above code is compiled and executed, it produces result something as follows</b></p>
+                    <p>strcpy( str3, str1) : Hello <br>
+                        strcat( str1, str2): HelloWorld <br>
+                        strlen(str1) : 10</p>
+
+            <h2 style="background-color: bisque;width: 260px;height: auto;color: brown;">The String Class in C++</h2>
+            <p><b>The standard C++ library provides a string class type that supports all the operations mentioned above, additionally much more functionality. Let us check the following example</b></p>
+            <p>#include <iostream> <br>
+                #include <string> <br>
+                
+                using namespace std; <br>
+                
+                int main () { <br>
+                
+                   string str1 = "Hello"; <br>
+                   string str2 = "World"; <br>
+                   string str3; <br>
+                   int  len ; <br>
+                
+                   // copy str1 into str3 <br>
+                   str3 = str1; <br>
+                   cout << "str3 : " << str3 << endl; <br>
+                
+                   // concatenates str1 and str2 <br>
+                   str3 = str1 + str2; <br>
+                   cout << "str1 + str2 : " << str3 << endl; <br>
+                
+                   // total length of str3 after concatenation <br>
+                   len = str3.size(); <br>
+                   cout << "str3.size() :  " << len << endl; <br>
+                
+                   return 0; <br>
+                }</p>
+            <p><b>When the above code is compiled and executed, it produces result something as follows</b></p>
+           <p>str3 : Hello <br>
+            str1 + str2 : HelloWorld <br>
+            str3.size() :  10</p>
+
+                    <div class="LE-container">
+                    </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

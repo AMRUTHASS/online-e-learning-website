@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-arrays</title>
+    <style>
+                 :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 170px;height: auto;font-size: 35px;color: brown;">C - Arrays</h1>   
+            </div>
+          </div>   
+        <p><b>Arrays a kind of data structure that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but it is <br>
+             often more useful to think of an array as a collection of variables of the same type.Instead of declaring individual variables, such as number0, number1, ..., and number99, <br>
+              you declare one array variable such as numbers and use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is <br>
+               accessed by an index.All arrays consist of contiguous memory locations. The lowest address corresponds to the first element and the highest address to the last element.
+            </b></p>
+        
+            <h2 style="background-color:  bisque;width: 180px;height: auto;color: brown;">Declaring Arrays</h2>
+            <p><b>To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows
+    </b></p>
+    <p>type arrayName [ arraySize ];</p>
+    <p><b>This is called a single-dimensional array. The arraySize must be an integer constant greater than zero and type can be any valid C data type. For example, to declare a 10-element <br>
+         array called balance of type double, use this statement</b></p>
+         <p>double balance[10];</p>
+         <p><b>Here balance is a variable array which is sufficient to hold up to 10 double numbers.</b></p>
+        
+            <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">Initializing Arrays</h2>
+            <p><b>You can initialize an array in C either one by one or using a single statement as follows
+            </b></p>
+            <p>double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};</p>
+            <p><b>The number of values between braces { } cannot be larger than the number of elements that we declare for the array between square brackets [ ]. <br>
+
+                If you omit the size of the array, an array just big enough to hold the initialization is created. Therefore, if you write</b></p>
+                <p>double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};</p>
+                <p><b>You will create exactly the same array as you did in the previous example. Following is an example to assign a single element of the array</b></p>
+                <p>balance[4] = 50.0;</p>
+                <p><b>The above statement assigns the 5th element in the array with a value of 50.0. All arrays have 0 as the index of their first element which is also called <br>
+                     the base index and the last index of an array will be total size of the array minus 1.</b></p>
+          <h2 style="background-color:  bisque;width: 270px;height: auto;color: brown;">Accessing Array Elements</h2>
+          <p><b>An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets after the name of the array. For example</b></p>
+          <p>double salary = balance[9];</p>
+          <p><b>The above statement will take the 10th element from the array and assign the value to salary variable. The following example Shows how to use all the three above mentioned concepts viz. <br>
+             declaration, assignment, and accessing arrays</b></p>
+             <p>#include <stdio.h> <br>
+ 
+                int main () { <br>
+                
+                   int n[ 10 ]; /* n is an array of 10 integers */ <br>
+                   int i,j; <br>
+                 
+                   /* initialize elements of array n to 0 */  <br>       
+                   for ( i = 0; i < 10; i++ ) { <br>
+                      n[ i ] = i + 100; /* set element at location i to i + 100 */ <br>
+                   } <br>
+                   
+                   /* output each array element's value */ <br>
+                   for (j = 0; j < 10; j++ ) { <br>
+                      printf("Element[%d] = %d\n", j, n[j] ); <br>
+                   } <br>
+                 
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                <p>Element[0] = 100 <br>
+                    Element[1] = 101 <br>
+                    Element[2] = 102 <br>
+                    Element[3] = 103 <br>
+                    Element[4] = 104 <br>
+                    Element[5] = 105 <br>
+                    Element[6] = 106 <br>
+                    Element[7] = 107 <br>
+                    Element[8] = 108 <br>
+                    Element[9] = 109 
+                    </p>
+         <h2 style="background-color:  bisque;width: 180px;height: auto;color: brown;">Arrays in Detail</h2>
+            <p><b>Arrays are important to C and should need a lot more attention. The following important concepts related to array should be <br>
+                 clear to a C programmer</b></p>
+                 <ol>
+                    <li>Multi-dimensional arrays - C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.</li>
+                    <li>Passing arrays to functions - You can pass to the function a pointer to an array by specifying the array's name without an index.</li>
+                    <li>Return array from a function - C allows a function to return an array.</li>
+                    <li>Pointer to an array - You can generate a pointer to the first element of an array by simply specifying the array name, without any index.</li>
+                 </ol>
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        
+    
+</body>
+</html>

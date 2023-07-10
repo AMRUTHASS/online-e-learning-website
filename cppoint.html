@@ -1,0 +1,217 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Pointers</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+  
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+        
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+          
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 200px;height: auto;font-size: 35px;color: brown;">C++ Pointers</h1>   
+          </div>
+        </div>
+      
+        <p><b>C++ pointers are easy and fun to learn. Some C++ tasks are performed more easily with pointers, and other C++ tasks, such as dynamic memory allocation, cannot be performed  <br>
+             without them.As you know every variable is a memory location and every memory location has its address defined which can be accessed using ampersand (&) operator which <br>
+              denotes an address in memory. Consider the following which will print the address of the variables defined</b></p>
+              <p>#include <iostream> <br>
+
+                using namespace std; <br>
+                int main () { <br>
+                   int  var1; <br>
+                   char var2[10]; <br>
+                
+                   cout << "Address of var1 variable: "; <br>
+                   cout << &var1 << endl; <br>
+                
+                   cout << "Address of var2 variable: "; <br>
+                   cout << &var2 << endl; <br>
+                
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                <p>Address of var1 variable: 0xbfebd5c0 <br>
+                    Address of var2 variable: 0xbfebd5b6</p>
+             <h1 style="background-color: bisque;width: 300px;height: auto;font-size: 35px;color: brown;">What are Pointers?</h1>   
+             <p><b>A pointer is a variable whose value is the address of another variable. Like any variable or constant, you must declare a pointer before you can work with it. The general form of a pointer variable declaration is </b></p>
+             <p>type *var-name;</p>
+             <p><b>Here, type is the pointer's base type; it must be a valid C++ type and var-name is the name of the pointer variable. The asterisk you used to declare a pointer is the same asterisk that you use for multiplication. <br>
+                 However, in this statement the asterisk is being used to designate a variable as a pointer. Following are the valid pointer declaration</b></p>
+                 <p>int    *ip;    // pointer to an integer <br>
+                    double *dp;    // pointer to a double <br>
+                    float  *fp;    // pointer to a float <br>
+                    char   *ch     // pointer to character</p>
+                    <p><b>The actual data type of the value of all pointers, whether integer, float, character, or otherwise, is the same, a long hexadecimal number that represents a memory address. The only difference between pointers <br>
+                         of different data types is the data type of the variable or constant that the pointer points to.
+
+                    </b></p>
+    
+
+            <h2 style="background-color: bisque;width: 230px;height: auto;color: brown;">Using Pointers in C++</h2>
+            <p><b>There are few important operations, which we will do with the pointers very frequently. (a) We define a pointer variable. (b) Assign the address of a variable to a pointer. (c) Finally access the value at the address <br>
+                 available in the pointer variable. This is done by using unary operator * that returns the value of the variable located at the address specified by its operand. Following example makes use of these operations</b></p>
+                 <p>#include <iostream> <br>
+
+                    using namespace std; <br>
+                    
+                    int main () { <br>
+                       int  var = 20;   // actual variable declaration. <br>
+                       int  *ip;        // pointer variable  <br>
+                    
+                       ip = &var;       // store address of var in pointer variable <br>
+                    
+                       cout << "Value of var variable: "; <br>
+                       cout << var << endl; <br>
+                    
+                       // print the address stored in ip pointer variable <br>
+                       cout << "Address stored in ip variable: "; <br>
+                       cout << ip << endl; <br>
+                    
+                       // access the value at the address available in pointer <br>
+                       cout << "Value of *ip variable: "; <br>
+                       cout << *ip << endl; <br>
+                    
+                       return 0;<br>
+                    }</p>
+                    <p><b>When the above code is compiled and executed, it produces result something as follows</b></p>
+                    <p>Value of var variable: 20 <br>
+                        Address stored in ip variable: 0xbfc601ac <br>
+                        Value of *ip variable: 20</p>
+          
+                <h2 style="background-color: bisque;width: 170px;height: auto;color: brown;">Pointers in C++</h2>
+                <p><b>Pointers have many but easy concepts and they are very important to C++ programming. There are following few important pointer concepts which should be clear to a C++ programmer -
+</b></p>
+<ol>
+    <li>Null Pointers - C++ supports null pointer, which is a constant with a value of zero defined in several standard libraries.</li>
+    <li>Pointer Arithmetic - There are four arithmetic operators that can be used on pointers: ++, --, +, -</li>
+    <li>Pointers vs Arrays - There is a close relationship between pointers and arrays.</li>
+    <li>Array of Pointers - You can define arrays to hold a number of pointers.</li>
+    <li>Pointer to Pointer - C++ allows you to have pointer on a pointer and so on.</li>
+    <li>Passing Pointers to Functions - Passing an argument by reference or by address both enable the passed argument to be changed in the calling function by the called function.</li>
+    <li>Return Pointer from Functions - C++ allows a function to return a pointer to local variable, static variable and dynamically allocated memory as well.</li>
+</ol>
+
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

@@ -1,0 +1,222 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Abstraction in C++</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+       
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+       
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+        
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 380px;height: auto;font-size: 35px;color: brown;">Data Abstraction in C++</h1>   
+          </div>
+        </div>
+      
+        <p><b>Data abstraction refers to providing only essential information to the outside world and hiding their background details, i.e., to represent the needed information in program without presenting the details.Data abstraction is a programming (and design) technique that relies on <br>
+             the separation of interface and implementation.Let's take one real life example of a TV, which you can turn on and off, change the channel, adjust the volume, and add external components such as speakers, VCRs, and DVD players, BUT you do not know its internal details, that is, <br>
+              you do not know how it receives signals over the air or through a cable, how it translates them, and finally displays them on the screen.Thus, we can say a television clearly separates its internal implementation from its external interface and you can play with its interfaces <br>
+               like the power button, channel changer, and volume control without having any knowledge of its internals.In C++, classes provides great level of data abstraction. They provide sufficient public methods to the outside world to play with the functionality of the object and to <br>
+                manipulate object data, i.e., state without actually knowing how class has been implemented internally.For example, your program can make a call to the sort() function without knowing what algorithm the function actually uses to sort the given values. In fact, the underlying <br>
+                 implementation of the sorting functionality could change between releases of the library, and as long as the interface stays the same, your function call will still work.In C++, we use classes to define our own abstract data types (ADT). You can use the cout object of class <br>
+                  ostream to stream data to standard output like this</b></p>
+                  <p>#include <iostream> <br>
+                    using namespace std; <br>
+                    
+                    int main() { <br>
+                       cout << "Hello C++" <<endl; <br>
+                       return 0; <br>
+                    }</p>
+                    <p><b>Here, you don't need to understand how cout displays the text on the user's screen. You need to only know the public interface and the underlying implementation of ‘cout’ is free to change.
+
+                    </b></p>
+             
+             <h1 style="background-color: bisque;width: 530px;height: auto;font-size: 35px;color: brown;">Access Labels Enforce Abstraction</h1>   
+             <p><b>In C++, we use access labels to define the abstract interface to the class. A class may contain zero or more access labels</b></p>
+             <ul>
+                <li>Members defined with a public label are accessible to all parts of the program. The data-abstraction view of a type is defined <br>
+                     by its public members.</li>
+                     <li>Members defined with a private label are not accessible to code that uses the class. The private sections hide the  <br>
+                         implementation from code that uses the type.</li>
+                         <p><b>There are no restrictions on how often an access label may appear. Each access label specifies the access level of the succeeding member definitions. The specified access level remains in effect until <br>
+                             the next access label is encountered or the closing right brace of the class body is seen.</b></p>
+             </ul>
+    
+
+            <h2 style="background-color: bisque;width: 300px;height: auto;color: brown;">Benefits of Data Abstraction</h2>
+            <p><b>Data abstraction provides two important advantages</b></p>
+            <ul>
+                <li>Class internals are protected from inadvertent user-level errors, which might corrupt the state of the object.</li>
+                <li>The class implementation may evolve over time in response to changing requirements or bug reports without requiring change in user-level code.</li>
+            </ul><p><b>By defining data members only in the private section of the class, the class author is free to make changes in the data. If the implementation changes, only the class code needs to be examined to see what affect the <br>
+                 change may have. If data is public, then any function that directly access the data members of the old representation might be broken.</b></p>
+                
+          
+                <h2 style="background-color: bisque;width: 280px;height: auto;color: brown;">Data Abstraction Example</h2>
+                <p><b>Any C++ program where you implement a class with public and private members is an example of data abstraction. Consider the following example </b></p>
+                <p>#include <iostream> <br>
+                    using namespace std; <br>
+                    
+                    class Adder { <br>
+                       public: <br>
+                          // constructor <br>
+                          Adder(int i = 0) { <br>
+                             total = i; <br>
+                          } <br>
+                          
+                          // interface to outside world <br>
+                          void addNum(int number) { <br>
+                             total += number; <br>
+                          } <br>
+                          
+                          // interface to outside world <br>
+                          int getTotal() { <br>
+                             return total; <br>
+                          }; <br>
+                          
+                       private: <br>
+                          // hidden data from outside world <br>
+                          int total; <br>
+                    }; <br>
+                    
+                    int main() { <br>
+                       Adder a; <br>
+                       
+                       a.addNum(10); <br>
+                       a.addNum(20); <br>
+                       a.addNum(30); <br>
+                    
+                       cout << "Total " << a.getTotal() <<endl; <br>
+                       return 0; <br>
+                    }</p>
+                    <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+                    <p>Total 60</p>
+                    <p><b>Above class adds numbers together, and returns the sum. The public members - addNum and getTotal are the interfaces to the outside world and a user needs to know them to use the class. The private member total is <br>
+                         something that the user doesn't need to know about, but is needed for the class to operate properly.</b></p>
+
+                            <h2 style="background-color: bisque;width: 200px;height: auto;color: brown;">Designing Strategy</h2>    
+                            <p><b>Abstraction separates code into interface and implementation. So while designing your component, you must keep interface independent of the implementation so that if you change underlying implementation then <br>
+                                 interface would remain intact.In this case whatever programs are using these interfaces, they would not be impacted and would just need a recompilation with the latest implementation.</b></p>    
+
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

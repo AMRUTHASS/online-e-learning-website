@@ -1,0 +1,214 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-recursion</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 190px;height: auto;font-size: 35px;color: brown;">C-Recursion</h1>   
+            </div>
+          </div>   
+      
+        <p><b>Recursion is the process of repeating items in a self-similar way. In programming languages, if a program allows you to call a function inside the same function, then it is called <br>
+             a recursive call of the function.</b></p>
+             <p>void recursion() { <br>
+                recursion(); /* function calls itself */ <br>
+             } <br>
+             
+             int main() { <br>
+                recursion(); <br>
+             }</p>
+             <p><b>The C programming language supports recursion, i.e., a function to call itself. But while using recursion, programmers need to be careful to define an exit condition from the <br>
+                 function, otherwise it will go into an infinite loop.Recursive functions are very useful to solve many mathematical problems, such as calculating the factorial of a number, <br>
+                  generating Fibonacci series, etc.</b></p>
+            <h2 style="background-color:  bisque;width: 200px;height: auto;color: brown;">Number Factorial</h2>
+            <p><b>The following example calculates the factorial of a given number using a recursive function
+             </b></p>
+             <p>
+                #include <stdio.h> <br>
+
+                    unsigned long long int factorial(unsigned int i) { <br>
+                    
+                       if(i <= 1) { <br> 
+                          return 1;  <br>
+                       } <br>
+                       return i * factorial(i - 1); <br>
+                    }  <br>
+                    
+                    int  main() { <br>
+                       int i = 12; <br>
+                       printf("Factorial of %d is %d\n", i, factorial(i)); <br>
+                       return 0; <br>
+                    }
+             </p>
+             <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+             <p>Factorial of 12 is 479001600</p>
+             
+        
+            <h2 style="background-color:  bisque;width: 180px;height: auto;color: brown;">Fibonacci Series</h2>
+            <p><b>The following example generates the Fibonacci series for a given number using a recursive function
+    </b></p>
+    <p>#include <stdio.h> <br>
+
+        int fibonacci(int i) {
+         
+           if(i == 0) { <br>
+              return 0; <br>
+           } <br>
+            
+           if(i == 1) { <br>
+              return 1; <br>
+           } <br>
+           return fibonacci(i-1) + fibonacci(i-2); <br>
+        } <br>
+        
+        int  main() { <br>
+        
+           int i; <br>
+            
+           for (i = 0; i < 10; i++) { <br>
+              printf("%d\t\n", fibonacci(i)); <br>
+           } <br>
+            
+           return 0; <br>
+        }</p>
+        <p><b>When the above code is compiled and executed, it produces the following result</b></p>
+        <p>0 <br>	
+            1	<br>
+            1	<br>
+            2	<br>
+            3	<br>
+            5	<br>
+            8	<br>
+            13	<br>
+            21	<br>
+            34</p>
+         <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+    
+</body>
+</html>

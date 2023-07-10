@@ -1,0 +1,189 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Modifier Types</title>
+    <style>
+        :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+      </style>
+      </head>
+      <body>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="cpp/cbasyn">C++-basic syntax</a>
+    
+          <a href="cpvarsco">C++-variable scope</a>
+          <a href="cpmod">C++-Modifier Types</a>
+          <a href="cparr">C++-Arrays</a>
+          <a href="cpstr">C++-Strings</a>
+          <a href="cppoint">C++-pointers</a>
+        
+          <a href="cpvar">C++-Variable Types</a>
+          <a href="cpclaobj">C++-Classes and Objects</a>
+          <a href="cpinherit">C++-Inheritance</a>
+          <a href="cpover">C++-Overloading</a>
+          <a href="cppoly">C++-Polymorphism</a>
+          <a href="cpabs">C++-Abstraction</a>
+          <a href="cpenc">C++-Encapsulation</a>
+         
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>  
+    
+        
+        <div id="main">
+        
+        <div class="LE-teal">
+          <div class="LE-container">
+            <h1 style="background-color: lightcoral;width: 310px;height: auto;font-size: 35px;color: brown;">C++ Modifier Types</h1>   
+          </div>
+        </div>
+      
+        <p><b>C++ allows the char, int, and double data types to have modifiers preceding them. A modifier is used to alter the meaning of the base type so that it more <br>
+             precisely fits the needs of various situations. <br>
+The data type modifiers are listed here </b></p>
+
+ <ul>
+  <li>signed</li>
+  <li>unsigned</li>
+  <li>long</li>
+  <li>short</li>
+ </ul>
+ <p><b>The modifiers signed, unsigned, long, and short can be applied to integer base types. In addition, signed and unsigned can be applied to char, and long can be applied <br>
+     to double.The modifiers signed and unsigned can also be used as prefix to long or short modifiers. For example, unsigned long int.C++ allows a shorthand notation for <br>
+      declaring unsigned, short, or long integers. You can simply use the word unsigned, short, or long, without int. It automatically implies int. For example, the following <br>
+      two statements both declare unsigned integer variables.
+    
+    </b></p>
+    <p>unsigned x; <br>
+        unsigned int y;</p>
+        <p><b>To understand the difference between the way signed and unsigned integer modifiers are interpreted by C++, you should run the following short program</b></p>
+        <p>#include <iostream> <br>
+            using namespace std; <br>
+             
+            /* This program shows the difference between <br>
+               * signed and unsigned integers. <br>
+            */ <br>
+            int main() { <br>
+               short int i;           // a signed short integer <br>
+               short unsigned int j;  // an unsigned short integer <br>
+            
+               j = 50000; <br>
+            
+               i = j; <br>
+               cout << i << " " << j; <br>
+            
+               return 0; <br>
+            }</p>
+            <p><b>When this program is run, following is the output</b></p>
+            <p>-15536 50000</p>
+            <p><b>The above result is because the bit pattern that represents <br>
+                 50,000 as a short unsigned integer is interpreted as -15,536 <br>
+                  by a short.</b></p>
+            <h2 style="background-color: bisque;width: 250px;height: auto;color: brown;">Type Qualifiers in C++</h2>
+            <p><b>The type qualifiers provide additional information about the variables they precede.</b></p>
+            <ol>
+                <li>	
+                    const - Objects of type const cannot be changed by your program during execution.</li>
+                    <li>	
+                        volatile - The modifier volatile tells the compiler that a variable's value may be changed in ways not explicitly specified by the program.</li>
+                        <li>	
+                            restrict - A pointer qualified by restrict is initially the only means by which the object it points to can be accessed. Only C99 adds a new type qualifier called restrict.</li>
+            </ol>
+           
+        <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+      function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+        </script>
+   
+
+    
+</body>
+</html>

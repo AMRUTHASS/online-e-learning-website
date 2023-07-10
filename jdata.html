@@ -1,0 +1,315 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Objects and Classes</title>
+    <style>
+         :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="java/jbasic">Java-Basic syntax</a>
+        <a href="jdata">Java-Object & Class</a>
+        <a href="jcons">Java-Constructors</a>
+        <a href="jdttyps">Java-Basic Datatypes</a>
+        <a href="jvar">Java-Variable Types</a>
+        <a href="jmod">Java-Modifier Types</a>
+        <a href="jopr">Java-Basic Operators</a>
+        <a href="jloop">Java-Loop Control</a>
+        <a href="jinherit">Java Inheritance</a>
+        <a href="jover">Java Overriding</a>
+        <a href="jpol">Java Polymorphism</a>
+        <a href="jabs">Java Abstraction</a>
+        <a href="jencap">Java Encapsulation</a>
+        <a href="jintr">Java Interfaces</a>
+        <a href="jpack">Java Packages</a>
+        <a href="jnum">Java-Numbers</a>
+        <a href="jchar">Java-Characters</a>
+        <a href="jstr">Java-Strings</a>
+        <a href="jarr">Java-Arrays</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 420px;height: auto;font-size: 35px;color: brown;">Java-Objects and Classes</h1>   
+            </div>
+          </div>  
+          <p>Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts −</p> 
+          <ul>
+          <li>Polymorphism</li>
+          <li>Inheritance</li>
+          <li>Encapsulation</li>
+          <li>Abstraction</li>
+          <li>Classes</li>
+          <li>Objects</li>
+          <li>Instance</li>
+          <li>Method</li>
+          <li>Message Passing</li>
+          
+          </ul>
+          <p>In this chapter, we will look into the concepts - Classes and Objects</p>
+          
+          <ul>
+            <li><b>Object</b> − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating. An object is an instance of a class.</li>
+            
+            <li><b>Class</b> − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.</li>
+            <br></p>
+            <h2 style="background-color:  bisque;width: 175px;height: auto;color: brown;">Objects in Java</h2>
+            <p>Let us now look deep into what are objects. If we consider the real-world, we can find many objects around us, cars, dogs, humans, etc. All these objects have a state and a behavior.
+            <br>
+              If we consider a dog, then its state is - name, breed, color, and the behavior is - barking, wagging the tail, running.
+            <br> 
+              If you compare the software object with a real-world object, they have very similar characteristics.
+            <br>  
+              Software objects also have a state and a behavior. A software object's state is stored in fields and behavior is shown via methods.
+            <br>  
+              So in software development, methods operate on the internal state of an object and the object-to-object communication is done via methods.</p>
+                
+
+            <h2 style="background-color:  bisque;width: 170px;height: auto;color: brown;">Classes in Java</h2>
+            <p>A class is a blueprint from which individual objects are created.<br>
+              Following is a sample of a class.
+            </p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              public class Dog {<br>
+                String breed;<br>
+                int age;<br>
+                String color;<br>
+             
+                void barking() {<br>
+                }
+              <br>
+                void hungry() {<br>
+                }
+              <br>
+                void sleeping() {<br>
+                }
+              <br>  
+             } </p>
+            <p>A class can contain any of the following variable types.</p>
+            <ul>
+              <li><b>Local variables</b>− Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.</li>
+              <li><b>Instance variables</b>− Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.</li>
+              <li><b>Class variables</b>− Class variables are variables declared within a class, outside any method, with the static keyword.</li>
+            </ul>
+            <p>A class can have any number of methods to access the value of various kinds of methods. In the above example, barking(), hungry() and sleeping() are methods.
+            <br>
+              Following are some of the important topics that need to be discussed when looking into classes of the Java Language.</p>
+              <h2 style="background-color:  bisque;width: 145px;height: auto;color: brown;">Constructors</h2>
+            <p>When discussing about classes, one of the most important sub topic would be constructors. Every class has a constructor. If we do not explicitly write a constructor for a class, the Java compiler builds a default constructor for that class.
+            <br>
+              Each time a new object is created, at least one constructor will be invoked. The main rule of constructors is that they should have the same name as the class. A class can have more than one constructor.
+            <br><br>  
+              Following is an example of a constructor −
+            </p>
+            <p><b>Example</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              public class Puppy {<br>
+                public Puppy() {<br>
+                }<br>
+             
+                public Puppy(String name) {<br>
+                   // This constructor has one parameter, name.<br>
+                }<br>
+             }
+          <h2 style="background-color:  bisque;width: 215px;height: auto;color: brown;">Creating an Object</h2>
+         <p>As mentioned previously, a class provides the blueprints for objects. So basically, an object is created from a class. In Java, the new keyword is used to create new objects.
+          <br>
+          There are three steps when creating an object from a class −</p>
+          <ul>
+            <li><b>Declaration</b>− A variable declaration with a variable name with an object type.</li>
+            <br>
+            <li><b>Instantiation</b>− The 'new' keyword is used to create the object.</li>
+            <br>
+            <li><b>Initialization</b> − The 'new' keyword is followed by a call to a constructor. This call initializes the new object.</li>
+          </ul>  
+          <p>Following is an example of creating an object −</p>
+          <p><b>Example</b></p>
+          <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            public class Puppy {<br>
+              public Puppy(String name) {<br>
+                 // This constructor has one parameter, name.<br>
+                 System.out.println("Passed Name is :" + name );<br>
+              }<br>
+           
+              public static void main(String []args) {<br>
+                 // Following statement would create an object myPuppy<br>
+                 Puppy myPuppy = new Puppy( "tommy" );<br>
+              }<br>
+           }
+           </p>
+           <p>If we compile and run the above program, then it will produce the following result −</p>
+           <p><b>Output</b></p>
+           <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+            Passed Name is :tommy</p>
+            <h2 style="background-color:  bisque;width: 485px;height: auto;color: brown;">Accessing Instance Variables and Methods</h2>
+            <p>Instance variables and methods are accessed via created objects. To access an instance variable, following is the fully qualified path −</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              /* First create an object */<br>
+              ObjectReference = new Constructor();<br>
+              
+              /* Now call a variable as follows */
+              ObjectReference.variableName;<br>
+              
+              /* Now you can call a class method as follows */
+              ObjectReference.MethodName();<br>
+            </p>
+            <p>Example</p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              public class Puppy {<br>
+                int puppyAge;<br>
+             
+                public Puppy(String name) {<br>
+                   // This constructor has one parameter, name.<br>
+                   System.out.println("Name chosen is :" + name );<br>
+                }<br>
+             
+                public void setAge( int age ) {<br>
+                   puppyAge = age;<br>
+                }<br>
+             
+                public int getAge( ) {<br>
+                   System.out.println("Puppy's age is :" + puppyAge );<br>
+                   return puppyAge;<br>
+                }<br>
+             
+                public static void main(String []args) {<br>
+                   /* Object creation */<br>
+                   Puppy myPuppy = new Puppy( "tommy" );<br>
+             
+                   /* Call class method to set puppy's age */<br>
+                   myPuppy.setAge( 2 );<br>
+             
+                   /* Call another class method to get puppy's age */<br>
+                   myPuppy.getAge( );<br>>
+             
+                   /* You can access instance variable as follows as well */<br>
+                   System.out.println("Variable Value :" + myPuppy.puppyAge );<br>
+                }<br>
+             }
+            </p>
+            <p>If we compile and run the above program, then it will produce the following result −</p>
+            <p><b>Ouput</b></p>
+            <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+              Name chosen is :tommy<br>
+              Puppy's age is :2<br>
+              Variable Value :2
+            </p>
+            <h2 style="background-color:  bisque;width: 150px;height: auto;color: brown;">Java Package</h2>
+            <p>In simple words, it is a way of categorizing the classes and interfaces. When developing applications in Java, hundreds of classes and interfaces will be written, therefore categorizing these classes is a must as well as makes life much easier.</p>
+            <h2 style="background-color:  bisque;width: 215px;height: auto;color: brown;">Import Statements</h2>
+                <p>In Java if a fully qualified name, which includes the package and the class name is given, then the compiler can easily locate the source code or classes. Import statement is a way of giving the proper location for the compiler to find that particular class.
+                <br><br>
+                  For example, the following line would ask the compiler to load all the classes available in directory java_installation/java/io −</p>
+                <p style="border:1px solid #81818184; background-color:#81818184; width: 380px; padding:10px; border-radius: 5px;" >
+                import java.io.*;</p>
+            </div>
+          <div class="LE-container">
+        
+        
+        </div>
+    
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+        <script src="js/mode.js"></script>
+    
+    
+    
+</body>
+</html>

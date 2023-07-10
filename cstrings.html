@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-strings</title>
+    <style>
+               :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 170px;height: auto;font-size: 35px;color: brown;">C - Strings</h1>   
+            </div>
+          </div>   
+        <p><b>Strings are actually one-dimensional array of characters terminated by a null character '\0'. Thus a null-terminated string contains the characters <br>
+             that comprise the string followed by a null.The following declaration and initialization create a string consisting of the word "Hello". To hold the <br>
+              null character at the end of the array, the size of the character array containing the string is one more than the number of characters in the word <br>
+               "Hello."
+             </b></p>
+             <p>char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};</p>
+             <p><b>If you follow the rule of array initialization then you can write the above statement as follows</b></p>
+             <p>char greeting[] = "Hello";</p>
+             <p>#include <stdio.h> <br>
+
+                int main () { <br>
+                
+                   char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'}; <br>
+                   printf("Greeting message: %s\n", greeting ); <br>
+                   return 0; <br>
+                }</p>
+                <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                <p>Greeting message: Hello</p>
+                <p><b>C supports a wide range of functions that manipulate null-terminated strings</b></p>
+                <ol>
+                    <li>strcpy(s1, s2); - Copies string s2 into string s1.</li>
+                    <li>strcat(s1, s2); - Concatenates string s2 onto the end of string s1.</li>
+                    <li>strlen(s1); - Returns the length of string s1.</li>
+                    <li>strcmp(s1, s2); - Returns 0 if s1 and s2 are the same; less than 0 if s1<s2; greater than 0 if s1>s2.</li>
+                    <li>strchr(s1, ch); - Returns a pointer to the first occurrence of character ch in string s1.</li>
+                    <li>strstr(s1, s2); - Returns a pointer to the first occurrence of string s2 in string s1.</li>
+                </ol>
+                <p><b>The following example uses some of the above-mentioned functions</b></p>
+                <p>#include <stdio.h> <br>
+                    #include <string.h> <br>
+                    
+                    int main () { <br>
+                    
+                       char str1[12] = "Hello"; <br>
+                       char str2[12] = "World"; <br>
+                       char str3[12]; <br>
+                       int  len ; <br>
+                    
+                       /* copy str1 into str3 */ <br>
+                       strcpy(str3, str1); <br>
+                       printf("strcpy( str3, str1) :  %s\n", str3 ); <br>
+                    
+                       /* concatenates str1 and str2 */ <br>
+                       strcat( str1, str2); <br>
+                       printf("strcat( str1, str2):   %s\n", str1 ); <br>
+                    
+                       /* total lenghth of str1 after concatenation */ <br>
+                       len = strlen(str1); <br>
+                       printf("strlen(str1) :  %d\n", len ); <br>
+                    
+                       return 0; <br>
+                    }
+                    </p>
+                    <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                    <p>strcpy( str3, str1) :  Hello <br>
+                        strcat( str1, str2):   HelloWorld <br>
+                        strlen(str1) :  10</p>
+    
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+       
+    
+</body>
+</html>

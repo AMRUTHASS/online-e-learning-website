@@ -1,0 +1,236 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+              :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+  
+  :root,
+  :root.light {
+      --color-bg: #ffffff;
+      --color-fg: #000000;
+      --card-bg-color: #fafafa;
+  }
+  :root.dark {
+      --color-bg: #263238;
+      --color-fg: #ffffff;
+      --card-bg-color: #607d8b;
+  }
+  
+  body {
+      background-color: var(--color-bg);
+      color: var(--color-fg);
+  }
+  
+  .card {
+      background-color: var(--card-bg-color) !important;
+  }
+
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="C/cbasic">C-basic syntax</a>
+        <a href="cdata">C-datatypes</a>
+        <a href="cvarcons">C-variables and constants</a>
+        <a href="coper">C-operators</a>
+        <a href="cdec">C-decision making</a>
+        <a href="cloops">C-loops</a>
+        <a href="cfuncs">C-functions</a>
+        <a href="carrays">C-arrays</a>
+        <a href="cpointers">C-pointers</a>
+        <a href="cstrings">C-strings</a>
+        <a href="cstruct">C-structures</a>
+        <a href="cunions">C-unions</a>
+        <a href="ciotype">C-input and output type</a>
+        <a href="crecursion">C-recursion</a>
+        <a href="chf">C-headerfiles</a>
+        <a href="cprepro">C-preproccessor</a>
+        <a href="ctypecas">C-typecasting</a>
+        <a href="cerrhandling">C-errorhandling</a>
+      </div>
+      
+    
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    
+          <div id="main">
+          
+          <div class="LE-teal">
+            
+            <div class="LE-container">
+              <h1 style="background-color: lightcoral;width: 260px;height: auto;font-size: 35px;color: brown;">C-errorhandling</h1>   
+            </div>
+          </div>   
+        <p><b>As such, C programming does not provide direct support for error handling but being a system programming language, it provides you access at lower level in the form <br>
+             of return values. Most of the C or even Unix function calls return -1 or NULL in case of any error and set an error code errno. It is set as a global variable and <br>
+              indicates an error occurred during any function call. You can find various error codes defined in <error.h> header file.So a C programmer can check the returned <br>
+                 values and can take appropriate action depending on the return value. It is a good practice, to set errno to 0 at the time of initializing a program. A value <br>
+                  of 0 indicates that there is no error in the program.</b></p>
+            <h2 style="background-color:  bisque;width: 310px;height: auto;color: brown;">errno, perror(). and strerror()</h2>
+            <p><b>The C programming language provides perror() and strerror() functions which can be used to display the text message associated with errno.</b></p>
+            <ul>
+                <li>The perror() function displays the string you pass to it, followed by a colon, a space, and then the textual representation of the current errno value.</li>
+                <li>The strerror() function, which returns a pointer to the textual representation of the current errno value.</li>
+            </ul>
+            <p><b>Let's try to simulate an error condition and try to open a file which does not exist. Here I'm using both the functions to show the usage, but you can use one or <br>
+                 more ways of printing your errors. Second important point to note is that you should use stderr file stream to output all the errors.</b></p>
+                 <p>#include <stdio.h> <br>
+                    #include <errno.h> <br>
+                    #include <string.h> <br>
+                    
+                    extern int errno ; <br>
+                    
+                    int main () { <br>
+                    
+                       FILE * pf; <br>
+                       int errnum; <br>
+                       pf = fopen ("unexist.txt", "rb"); <br>
+                        
+                       if (pf == NULL) { <br>
+                       
+                          errnum = errno; <br>
+                          fprintf(stderr, "Value of errno: %d\n", errno); <br>
+                          perror("Error printed by perror"); <br>
+                          fprintf(stderr, "Error opening file: %s\n", strerror( errnum )); <br>
+                       } else { <br>
+                       
+                          fclose (pf); <br>
+                       } <br>
+                       
+                       return 0; <br>
+                    }
+                    </p>
+                    <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                    <p>Value of errno: 2 <br>
+                        Error printed by perror: No such file or directory <br>
+                        Error opening file: No such file or directory</p>
+        
+            <h2 style="background-color:  bisque;width: 240px;height: auto;color: brown;">Divide by Zero Errors</h2>
+            <p><b>It is a common problem that at the time of dividing any number, programmers do not check if a divisor is zero and finally it creates a runtime error.The code <br>
+                 below fixes this by checking if the divisor is zero before dividing</b></p>
+                 <p>#include <stdio.h> <br>
+                    #include <stdlib.h> <br>
+                    
+                    main() { <br>
+                    
+                       int dividend = 20; <br>
+                       int divisor = 0; <br>
+                       int quotient; <br>
+                     
+                       if( divisor == 0){ <br>
+                          fprintf(stderr, "Division by zero! Exiting...\n"); <br>
+                          exit(-1); <br>
+                       } <br>
+                       
+                       quotient = dividend / divisor; <br>
+                       fprintf(stderr, "Value of quotient : %d\n", quotient ); <br>
+                    
+                       exit(0); <br>
+                    }
+                    </p>
+                    <p><b>When the above code is compiled and executed, it produces the following result </b></p>
+                    <p>Division by zero! Exiting...</p>
+        
+            <h2 style="background-color:  bisque;width: 220px;height: auto;color: brown;">Program Exit Status</h2>
+            <p><b>It is a common practice to exit with a value of EXIT_SUCCESS in case of program coming out after a successful operation. Here, EXIT_SUCCESS is a macro and it is <br>
+                 defined as 0.If you have an error condition in your program and you are coming out then you should exit with a status EXIT_FAILURE which is defined as -1. So <br>
+                  let's write above program as follows 
+            </b></p>
+            <p>#include <stdio.h> <br>
+                #include <stdlib.h> <br>
+                
+                main() { <br>
+                
+                   int dividend = 20; <br>
+                   int divisor = 5; <br>
+                   int quotient; <br>
+                 
+                   if( divisor == 0) { <br>
+                      fprintf(stderr, "Division by zero! Exiting...\n"); <br>
+                      exit(EXIT_FAILURE); <br>
+                   } <br>
+                    
+                   quotient = dividend / divisor; <br>
+                   fprintf(stderr, "Value of quotient : %d\n", quotient ); <br>
+                
+                   exit(EXIT_SUCCESS); <br>
+                }</p>
+                <p><b>
+                    When the above code is compiled and executed, it produces the following result</b></p>
+                    <p>Value of quotient : 4</p>
+          
+          <div class="LE-container">
+        </div>
+        
+        </div>
+        
+        <script>
+          function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+          }
+          
+          function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+          }
+          </script>
+
+</body>
+</html>
